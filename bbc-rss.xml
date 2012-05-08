@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet title="XSL_formatting" type="text/xsl" href="/shared/bsp/xsl/rss/nolsol.xsl"?>
+
+<rss xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">  
+  <channel> 
+    <title>BBC News - World</title>  
+    <link>http://www.bbc.co.uk/go/rss/int/news/-/news/world/</link>  
+    <description>The latest stories from the World section of the BBC News web site.</description>  
+    <language>en-gb</language>  
+    <lastBuildDate>Mon, 19 Dec 2011 07:44:32 GMT</lastBuildDate>  
+    <copyright>Copyright: (C) British Broadcasting Corporation, see http://news.bbc.co.uk/2/hi/help/rss/4498287.stm for terms and conditions of reuse.</copyright>  
+    <image> 
+      <url>http://news.bbcimg.co.uk/nol/shared/img/bbc_news_120x60.gif</url>  
+      <title>BBC News - World</title>  
+      <link>http://www.bbc.co.uk/go/rss/int/news/-/news/world/</link>  
+      <width>120</width>  
+      <height>60</height> 
+    </image>  
+    <ttl>15</ttl>  
+    <atom:link href="http://feeds.bbci.co.uk/news/world/rss.xml" rel="self" type="application/rss+xml"/>  
+    <item> 
+      <title>N Korean leader Kim Jong-il dies</title>  
+      <description>North Korean television announces the death of Kim Jong-il, who had led the communist nation since the death of his father in 1994.</description>  
+      <link>http://www.bbc.co.uk/go/rss/int/news/-/news/world-asia-16239693</link>  
+      <guid isPermaLink="false">http://www.bbc.co.uk/news/world-asia-16239693</guid>  
+      <pubDate>Mon, 19 Dec 2011 07:27:04 GMT</pubDate>  
+      <media:thumbnail width="66" height="49" url="http://news.bbcimg.co.uk/media/images/57403000/jpg/_57403938_013555133-1.jpg"/>  
+      <media:thumbnail width="144" height="81" url="http://news.bbcimg.co.uk/media/images/57403000/jpg/_57403934_013555133-1.jpg"/> 
+    </item>  
+    <item> 
+      <title>Mass burial for Philippines dead</title>  
+      <description>A mass burial is being organised in the Philippines for scores killed by flash floods, which left at least 650 dead on the southern island of Mindanao.</description>  
+      <link>http://www.bbc.co.uk/go/rss/int/news/-/news/world-asia-16239691</link>  
+      <guid isPermaLink="false">http://www.bbc.co.uk/news/world-asia-16239691</guid>  
+      <pubDate>Mon, 19 Dec 2011 01:53:46 GMT</pubDate>  
+      <media:thumbnail width="66" height="49" url="http://news.bbcimg.co.uk/media/images/57403000/jpg/_57403755_013550268-1.jpg"/>  
+      <media:thumbnail width="144" height="81" url="http://news.bbcimg.co.uk/media/images/57403000/jpg/_57403691_013550268-1.jpg"/> 
+    </item>  
+    <item> 
+      <title>Tributes paid after Havel's death</title>  
+      <description>Tributes have been flooding in from around the world following the death of the Czech Republic's first President, Vaclav Havel.</description>  
+      <link>http://www.bbc.co.uk/go/rss/int/news/-/news/world-europe-16239397</link>  
+      <guid isPermaLink="false">http://www.bbc.co.uk/news/world-europe-16239397</guid>  
+      <pubDate>Mon, 19 Dec 2011 01:02:34 GMT</pubDate>  
+      <media:thumbnail width="66" height="49" url="http://news.bbcimg.co.uk/media/images/57403000/jpg/_57403677_013553086-1.jpg"/>  
+      <media:thumbnail width="144" height="81" url="http://news.bbcimg.co.uk/media/images/57403000/jpg/_57403545_013554390-1.jpg"/> 
+    </item>  
+    <item> 
+      <title>Australia to aid Indonesia search</title>  
+      <description>Australia sends rescue vessels to help search for scores of people believed missing after a boat carrying asylum-seekers sank off Indonesia.</description>  
+      <link>http://www.bbc.co.uk/go/rss/int/news/-/news/world-asia-16239805</link>  
+      <guid isPermaLink="false">http://www.bbc.co.uk/news/world-asia-16239805</guid>  
+      <pubDate>Mon, 19 Dec 2011 04:45:51 GMT</pubDate>  
+      <media:thumbnail width="66" height="49" url="http://news.bbcimg.co.uk/media/images/57403000/jpg/_57403802_013551092-1.jpg"/>  
+      <media:thumbnail width="144" height="81" url="http://news.bbcimg.co.uk/media/images/57403000/jpg/_57403800_013551092-1.jpg"/> 
+    </item>  
+    <item> 
+      <title>Israel frees last swap prisoners</title>  
+      <description>Israel frees 550 Palestinian detainees in the second part of a deal that saw the release of Israeli soldier Gilad Shalit in October.</description>  
+      <link>http://www.bbc.co.uk/go/rss/int/news/-/news/world-middle-east-16238600</link>  
+      <guid isPermaLink="false">http://www.bbc.co.uk/news/world-middle-east-16238600</guid>  
+      <pubDate>Sun, 18 Dec 2011 21:40:00 GMT</pubDate>  
+      <media:thumbnail width="66" height="49" url="http://news.bbcimg.co.uk/media/images/57402000/jpg/_57402275_821uthgk.jpg"/>  
+      <media:thumbnail width="144" height="81" url="http://news.bbcimg.co.uk/media/images/57402000/jpg/_57402273_821uthgk.jpg"/> 
+    </item>  
+    <item> 
+      <title>Iran TV shows 'US spy confession'</title>  
+      <description>Iranian state television shows what it says is the confession of an alleged CIA spy - an American man of Iranian descent.</description>  
+      <link>http://www.bbc.co.uk/go/rss/int/news/-/news/world-middle-east-16239022</link>  
+      <guid isPermaLink="false">http://www.bbc.co.uk/news/world-middle-east-16239022</guid>  
+      <pubDate>Sun, 18 Dec 2011 21:44:54 GMT</pubDate>  
+      <media:thumbnail width="66" height="49" url="http://news.bbcimg.co.uk/media/images/57403000/jpg/_57403107_57403058.jpg"/>  
+      <media:thumbnail width="144" height="81" url="http://news.bbcimg.co.uk/media/images/57403000/jpg/_57403105_57403058.jpg"/> 
+    </item>  
+    <item> 
+      <title>Army 'failed' in Wikileaks case</title>  
+      <description>Lawyers defending a US soldier accused of handing government secrets to Wikileaks say his supervisors failed to recognise his troubled emotional state.</description>  
+      <link>http://www.bbc.co.uk/go/rss/int/news/-/news/world-us-canada-16239198</link>  
+      <guid isPermaLink="false">http://www.bbc.co.uk/news/world-us-canada-16239198</guid>  
+      <pubDate>Mon, 19 Dec 2011 00:06:46 GMT</pubDate>  
+      <media:thumbnail width="66" height="49" url="http://news.bbcimg.co.uk/media/images/57403000/jpg/_57403518_013551376-1.jpg"/>  
+      <media:thumbnail width="144" height="81" url="http://news.bbcimg.co.uk/media/images/57403000/jpg/_57403265_013551376-1.jpg"/> 
+    </item>  
+    <item> 
+      <title>Pakistan's president returns home</title>  
+      <description>Pakistani President Asif Ali Zardari returns home from Dubai after receiving medical treatment, officials say.</description>  
+      <link>http://www.bbc.co.uk/go/rss/int/news/-/news/world-asia-16239027</link>  
+      <guid isPermaLink="false">http://www.bbc.co.uk/news/world-asia-16239027</guid>  
+      <pubDate>Sun, 18 Dec 2011 21:19:14 GMT</pubDate>  
+      <media:thumbnail width="66" height="49" url="http://news.bbcimg.co.uk/media/images/57403000/jpg/_57403201_57403122.jpg"/>  
+      <media:thumbnail width="144" height="81" url="http://news.bbcimg.co.uk/media/images/57403000/jpg/_57403197_57403122.jpg"/> 
+    </item>  
+    <item> 
+      <title>Woman set alight in New York lift</title>  
+      <description>A man is arrested after a 73-year-old woman is killed by being doused in fuel and set alight in the lift of her block of flats in New York City.</description>  
+      <link>http://www.bbc.co.uk/go/rss/int/news/-/news/world-us-canada-16236866</link>  
+      <guid isPermaLink="false">http://www.bbc.co.uk/news/world-us-canada-16236866</guid>  
+      <pubDate>Sun, 18 Dec 2011 22:41:26 GMT</pubDate>  
+      <media:thumbnail width="66" height="49" url="http://news.bbcimg.co.uk/media/images/57399000/jpg/_57399668_torched.jpg"/>  
+      <media:thumbnail width="144" height="81" url="http://news.bbcimg.co.uk/media/images/57399000/jpg/_57399664_torched.jpg"/> 
+    </item>  
+    <item> 
+      <title>Deadly unrest continues in Cairo</title>  
+      <description>Protesters stone security forces in Cairo as the death toll for three days of anti-military unrest in the Egyptian capital reaches 10.</description>  
+      <link>http://www.bbc.co.uk/go/rss/int/news/-/news/world-middle-east-16235675</link>  
+      <guid isPermaLink="false">http://www.bbc.co.uk/news/world-middle-east-16235675</guid>  
+      <pubDate>Sun, 18 Dec 2011 12:41:10 GMT</pubDate>  
+      <media:thumbnail width="66" height="49" url="http://news.bbcimg.co.uk/media/images/57397000/jpg/_57397061_013547565-1.jpg"/>  
+      <media:thumbnail width="144" height="81" url="http://news.bbcimg.co.uk/media/images/57397000/jpg/_57397057_013547565-1.jpg"/> 
+    </item>  
+    <item> 
+      <title>Bolivar honoured with new coffin</title>  
+      <description>Venezuelan President Hugo Chavez unveils a diamond and pearl-encrusted coffin containing the remains of independence hero Simon Bolivar.</description>  
+      <link>http://www.bbc.co.uk/go/rss/int/news/-/news/world-latin-america-16236105</link>  
+      <guid isPermaLink="false">http://www.bbc.co.uk/news/world-latin-america-16236105</guid>  
+      <pubDate>Sun, 18 Dec 2011 12:12:31 GMT</pubDate>  
+      <media:thumbnail width="66" height="49" url="http://news.bbcimg.co.uk/media/images/57397000/jpg/_57397239_013548061-1.jpg"/>  
+      <media:thumbnail width="144" height="81" url="http://news.bbcimg.co.uk/media/images/57397000/jpg/_57397102_013548061-1.jpg"/> 
+    </item>  
+    <item> 
+      <title>Indian is world's shortest woman</title>  
+      <description>Jyoti Amge, an Indian student measuring just 62.8cm, a little over two feet, is confirmed as the world's shortest woman by Guinness World Records.</description>  
+      <link>http://www.bbc.co.uk/go/rss/int/news/-/news/world-asia-india-16212541</link>  
+      <guid isPermaLink="false">http://www.bbc.co.uk/news/world-asia-india-16212541</guid>  
+      <pubDate>Fri, 16 Dec 2011 10:41:09 GMT</pubDate>  
+      <media:thumbnail width="66" height="49" url="http://news.bbcimg.co.uk/media/images/57366000/jpg/_57366510_57364847.jpg"/>  
+      <media:thumbnail width="144" height="81" url="http://news.bbcimg.co.uk/media/images/57366000/jpg/_57366508_57364847.jpg"/> 
+    </item>  
+    <item> 
+      <title>Last US troops withdraw from Iraq</title>  
+      <description>The last convoy of US troops to leave Iraq crosses the border into Kuwait, nearly nine years after the invasion that toppled Saddam Hussein.</description>  
+      <link>http://www.bbc.co.uk/go/rss/int/news/-/news/world-middle-east-16234723</link>  
+      <guid isPermaLink="false">http://www.bbc.co.uk/news/world-middle-east-16234723</guid>  
+      <pubDate>Sun, 18 Dec 2011 05:45:16 GMT</pubDate>  
+      <media:thumbnail width="66" height="49" url="http://news.bbcimg.co.uk/media/images/57395000/jpg/_57395570_013548941-1.jpg"/>  
+      <media:thumbnail width="144" height="81" url="http://news.bbcimg.co.uk/media/images/57395000/jpg/_57395568_013548941-1.jpg"/> 
+    </item>  
+    <item> 
+      <title>Obama signs funding bill into law</title>  
+      <description>President Obama signs into law a spending bill, averting a shutdown of federal government services, with a vote on a payroll tax bill due next week.</description>  
+      <link>http://www.bbc.co.uk/go/rss/int/news/-/news/world-us-canada-16232716</link>  
+      <guid isPermaLink="false">http://www.bbc.co.uk/news/world-us-canada-16232716</guid>  
+      <pubDate>Sun, 18 Dec 2011 00:24:48 GMT</pubDate>  
+      <media:thumbnail width="66" height="49" url="http://news.bbcimg.co.uk/media/images/57395000/jpg/_57395162_013546707-1.jpg"/>  
+      <media:thumbnail width="144" height="81" url="http://news.bbcimg.co.uk/media/images/57395000/jpg/_57395110_013546707-1.jpg"/> 
+    </item>  
+    <item> 
+      <title>Peru 'halts' parole woman's trip</title>  
+      <description>A US woman on parole in Peru after serving 15 years in prison for aiding left-wing rebels says she was stopped from leaving the country.</description>  
+      <link>http://www.bbc.co.uk/go/rss/int/news/-/news/world-latin-america-16234123</link>  
+      <guid isPermaLink="false">http://www.bbc.co.uk/news/world-latin-america-16234123</guid>  
+      <pubDate>Sat, 17 Dec 2011 21:08:03 GMT</pubDate>  
+      <media:thumbnail width="66" height="49" url="http://news.bbcimg.co.uk/media/images/57394000/jpg/_57394583_berensonnew.jpg"/>  
+      <media:thumbnail width="144" height="81" url="http://news.bbcimg.co.uk/media/images/57394000/jpg/_57394585_berensonnew.jpg"/> 
+    </item>  
+    <item> 
+      <title>Barcelona secure Club World Cup</title>  
+      <description>Barcelona are crowned Fifa Club World Cup winners after thrashing Brazilian side Santos 4-0 in Japan.</description>  
+      <link>http://news.bbc.co.uk/go/rss/int/news/-/sport1/hi/football/16234168.stm</link>  
+      <guid isPermaLink="false">http://news.bbc.co.uk/sport1/hi/football/16234168.stm</guid>  
+      <pubDate>Sun, 18 Dec 2011 14:05:23 GMT</pubDate>  
+      <media:thumbnail width="66" height="49" url="http://news.bbcimg.co.uk/media/images/57398000/jpg/_57398142_messi_afp.jpg"/>  
+      <media:thumbnail width="144" height="81" url="http://news.bbcimg.co.uk/media/images/57399000/jpg/_57399284_messi_afp.jpg"/> 
+    </item>  
+    <item> 
+      <title>Tunisia unveils Bouazizi statue</title>  
+      <description>Tunisians unveil a statue in honour of the man whose act of self-immolation a year ago unleashed the Arab Spring.</description>  
+      <link>http://www.bbc.co.uk/go/rss/int/news/-/news/world-africa-16230773</link>  
+      <guid isPermaLink="false">http://www.bbc.co.uk/news/world-africa-16230773</guid>  
+      <pubDate>Sat, 17 Dec 2011 16:35:31 GMT</pubDate>  
+      <media:thumbnail width="66" height="49" url="http://news.bbcimg.co.uk/media/images/57388000/jpg/_57388254_013474004-1.jpg"/>  
+      <media:thumbnail width="144" height="81" url="http://news.bbcimg.co.uk/media/images/57390000/jpg/_57390259_013544094-1.jpg"/> 
+    </item>  
+    <item> 
+      <title>'Barefoot diva' Evora dies at 70</title>  
+      <description>Singer Cesaria Evora, dubbed the 'Barefoot Diva' for performing without shoes, dies in her native Cape Verde at the age of 70.</description>  
+      <link>http://www.bbc.co.uk/go/rss/int/news/-/news/entertainment-arts-16232543</link>  
+      <guid isPermaLink="false">http://www.bbc.co.uk/news/entertainment-arts-16232543</guid>  
+      <pubDate>Sat, 17 Dec 2011 16:48:00 GMT</pubDate>  
+      <media:thumbnail width="66" height="49" url="http://news.bbcimg.co.uk/media/images/57390000/jpg/_57390816_cesaria_464getty.jpg"/>  
+      <media:thumbnail width="144" height="81" url="http://news.bbcimg.co.uk/media/images/57390000/jpg/_57390817_cesaria_464getty.jpg"/> 
+    </item>  
+    <item> 
+      <title>Many die in north India cold wave</title>  
+      <description>At least 26 people die in a cold wave sweeping through northern India, the country's state broadcaster Doordarshan News says.</description>  
+      <link>http://www.bbc.co.uk/go/rss/int/news/-/news/world-asia-india-16240079</link>  
+      <guid isPermaLink="false">http://www.bbc.co.uk/news/world-asia-india-16240079</guid>  
+      <pubDate>Mon, 19 Dec 2011 07:41:26 GMT</pubDate>  
+      <media:thumbnail width="66" height="49" url="http://news.bbcimg.co.uk/media/images/57404000/jpg/_57404937_57404455.jpg"/>  
+      <media:thumbnail width="144" height="81" url="http://news.bbcimg.co.uk/media/images/57404000/jpg/_57404936_57404455.jpg"/> 
+    </item>  
+    <item> 
+      <title>New rally as Kazakh unrest grows</title>  
+      <description>Angry protesters rally in the capital of a Kazakh oil-producing region after two days of unrest over an oil strike leave 11 dead and scores injured.</description>  
+      <link>http://www.bbc.co.uk/go/rss/int/news/-/news/world-asia-16235282</link>  
+      <guid isPermaLink="false">http://www.bbc.co.uk/news/world-asia-16235282</guid>  
+      <pubDate>Sun, 18 Dec 2011 15:44:51 GMT</pubDate>  
+      <media:thumbnail width="66" height="49" url="http://news.bbcimg.co.uk/media/images/57399000/jpg/_57399379_013551139-2.jpg"/>  
+      <media:thumbnail width="144" height="81" url="http://news.bbcimg.co.uk/media/images/57399000/jpg/_57399378_013551139-2.jpg"/> 
+    </item>  
+    <item> 
+      <title>Russian oil rig sinks under tow</title>  
+      <description>Four people die and around 50 are missing after an oil drilling rig capsizes and sinks under tow in freezing seas in the Russian far east.</description>  
+      <link>http://www.bbc.co.uk/go/rss/int/news/-/news/world-europe-16235095</link>  
+      <guid isPermaLink="false">http://www.bbc.co.uk/news/world-europe-16235095</guid>  
+      <pubDate>Sun, 18 Dec 2011 13:53:03 GMT</pubDate>  
+      <media:thumbnail width="66" height="49" url="http://news.bbcimg.co.uk/media/images/57395000/jpg/_57395678_57395671.jpg"/>  
+      <media:thumbnail width="144" height="81" url="http://news.bbcimg.co.uk/media/images/57395000/jpg/_57395674_57395671.jpg"/> 
+    </item>  
+    <item> 
+      <title>Fitch changes outlook on France</title>  
+      <description>Ratings agency Fitch affirms France's top-notch AAA credit rating but revises its outlook on the country to "negative".</description>  
+      <link>http://www.bbc.co.uk/go/rss/int/news/-/news/business-16226543</link>  
+      <guid isPermaLink="false">http://www.bbc.co.uk/news/business-16226543</guid>  
+      <pubDate>Sun, 18 Dec 2011 08:36:14 GMT</pubDate>  
+      <media:thumbnail width="66" height="49" url="http://news.bbcimg.co.uk/media/images/57143000/jpg/_57143618_121249226.jpg"/>  
+      <media:thumbnail width="144" height="81" url="http://news.bbcimg.co.uk/media/images/57143000/jpg/_57143616_121249226.jpg"/> 
+    </item>  
+    <item> 
+      <title>Iraq 'positive' after Syria talks</title>  
+      <description>An Iraqi delegation led by National Security adviser Falah al-Fayadh says it has held "positive" talks in Syria aimed at ending the violence there.</description>  
+      <link>http://www.bbc.co.uk/go/rss/int/news/-/news/world-middle-east-16229210</link>  
+      <guid isPermaLink="false">http://www.bbc.co.uk/news/world-middle-east-16229210</guid>  
+      <pubDate>Sat, 17 Dec 2011 21:41:59 GMT</pubDate>  
+      <media:thumbnail width="66" height="49" url="http://news.bbcimg.co.uk/media/images/57388000/jpg/_57388120_013543389-1.jpg"/>  
+      <media:thumbnail width="144" height="81" url="http://news.bbcimg.co.uk/media/images/57387000/jpg/_57387124_013543389-1.jpg"/> 
+    </item>  
+    <item> 
+      <title>Pentagon boss praises new Libya</title>  
+      <description>US Defence Secretary Leon Panetta expresses confidence in Libya's new government on a visit to Tripoli, as the UN lifts sanctions on the country's central bank.</description>  
+      <link>http://www.bbc.co.uk/go/rss/int/news/-/news/world-africa-16230267</link>  
+      <guid isPermaLink="false">http://www.bbc.co.uk/news/world-africa-16230267</guid>  
+      <pubDate>Sat, 17 Dec 2011 12:59:56 GMT</pubDate>  
+      <media:thumbnail width="66" height="49" url="http://news.bbcimg.co.uk/media/images/57387000/jpg/_57387064_013539906-1.jpg"/>  
+      <media:thumbnail width="144" height="81" url="http://news.bbcimg.co.uk/media/images/57388000/jpg/_57388174_013543422-1.jpg"/> 
+    </item>  
+    <item> 
+      <title>Stricter mortgage rules outlined</title>  
+      <description>New rules to stop the resurgence of risky mortgage lending are likely to be imposed in 2013 by the financial regulator.</description>  
+      <link>http://www.bbc.co.uk/go/rss/int/news/-/news/business-16215629</link>  
+      <guid isPermaLink="false">http://www.bbc.co.uk/news/business-16215629</guid>  
+      <pubDate>Mon, 19 Dec 2011 00:01:51 GMT</pubDate>  
+      <media:thumbnail width="66" height="49" url="http://news.bbcimg.co.uk/media/images/57371000/jpg/_57371354_003927364-1.jpg"/>  
+      <media:thumbnail width="144" height="81" url="http://news.bbcimg.co.uk/media/images/57371000/jpg/_57371352_003927364-1.jpg"/> 
+    </item>  
+    <item> 
+      <title>Riot operation 'flawed' say MPs</title>  
+      <description>The operation to police this summer's riots in towns and cities across England was flawed, a report by the Home Affairs Committee says.</description>  
+      <link>http://www.bbc.co.uk/go/rss/int/news/-/news/uk-politics-16237077</link>  
+      <guid isPermaLink="false">http://www.bbc.co.uk/news/uk-politics-16237077</guid>  
+      <pubDate>Mon, 19 Dec 2011 00:12:00 GMT</pubDate>  
+      <media:thumbnail width="66" height="49" url="http://news.bbcimg.co.uk/media/images/55052000/jpg/_55052430_012623350-1.jpg"/>  
+      <media:thumbnail width="144" height="81" url="http://news.bbcimg.co.uk/media/images/54617000/jpg/_54617670_riotpolice464in_getty.jpg"/> 
+    </item>  
+    <item> 
+      <title>S Korea markets down on Kim death</title>  
+      <description>S Korean markets decline after North Korea's state media announces the death of the country's leader Kim Jong-il.</description>  
+      <link>http://www.bbc.co.uk/go/rss/int/news/-/news/business-16239822</link>  
+      <guid isPermaLink="false">http://www.bbc.co.uk/news/business-16239822</guid>  
+      <pubDate>Mon, 19 Dec 2011 06:31:51 GMT</pubDate>  
+      <media:thumbnail width="66" height="49" url="http://news.bbcimg.co.uk/media/images/56974000/jpg/_56974544_shares.jpg"/>  
+      <media:thumbnail width="144" height="81" url="http://news.bbcimg.co.uk/media/images/56974000/jpg/_56974690_shares.jpg"/> 
+    </item>  
+    <item> 
+      <title>China home prices ease amid curbs</title>  
+      <description>House prices in most Chinese cities are falling as government policies aimed at cooling the property market start to take effect.</description>  
+      <link>http://www.bbc.co.uk/go/rss/int/news/-/news/business-16239406</link>  
+      <guid isPermaLink="false">http://www.bbc.co.uk/news/business-16239406</guid>  
+      <pubDate>Mon, 19 Dec 2011 01:21:52 GMT</pubDate>  
+      <media:thumbnail width="66" height="49" url="http://news.bbcimg.co.uk/media/images/57403000/jpg/_57403711_102137969.jpg"/>  
+      <media:thumbnail width="144" height="81" url="http://news.bbcimg.co.uk/media/images/57403000/jpg/_57403713_102137969.jpg"/> 
+    </item>  
+    <item> 
+      <title>Osborne to confirm banking split</title>  
+      <description>The chancellor is expected to announce to MPs that he will legislate to separate retail banking from more risky investment activities.</description>  
+      <link>http://www.bbc.co.uk/go/rss/int/news/-/news/business-16239255</link>  
+      <guid isPermaLink="false">http://www.bbc.co.uk/news/business-16239255</guid>  
+      <pubDate>Mon, 19 Dec 2011 00:34:45 GMT</pubDate>  
+      <media:thumbnail width="66" height="49" url="http://news.bbcimg.co.uk/media/images/57403000/jpg/_57403281_013415143-1.jpg"/>  
+      <media:thumbnail width="144" height="81" url="http://news.bbcimg.co.uk/media/images/57403000/jpg/_57403279_013415143-1.jpg"/> 
+    </item>  
+    <item> 
+      <title>Mancini delighted to bounce back</title>  
+      <description>Manchester City manager Roberto Mancini is happy to see his team respond to their first defeat of the season by beating Arsenal.</description>  
+      <link>http://news.bbc.co.uk/go/rss/int/news/-/sport1/hi/football/16238353.stm</link>  
+      <guid isPermaLink="false">http://news.bbc.co.uk/sport1/hi/football/16238353.stm</guid>  
+      <pubDate>Sun, 18 Dec 2011 19:47:28 GMT</pubDate>  
+      <media:thumbnail width="66" height="49" url="http://news.bbcimg.co.uk/media/images/57402000/jpg/_57402822_57402821.jpg"/>  
+      <media:thumbnail width="144" height="81" url="http://news.bbcimg.co.uk/media/images/51683000/jpg/_51683891_premier_live_114.jpg"/> 
+    </item>  
+    <item> 
+      <title>Sportsday Live - breaking sports news</title>  
+      <description>Reaction to Manchester City and Manchester United's victories, plus more.</description>  
+      <link>http://news.bbc.co.uk/go/rss/int/news/-/sport1/hi/front_page/9664564.stm</link>  
+      <guid isPermaLink="false">http://news.bbc.co.uk/sport1/hi/front_page/9664564.stm</guid>  
+      <pubDate>Mon, 19 Dec 2011 07:54:40 GMT</pubDate>  
+      <media:thumbnail width="66" height="49" url="http://news.bbcimg.co.uk/media/images/57404000/jpg/_57404660_steve-kean.jpg"/>  
+      <media:thumbnail width="144" height="81" url="http://news.bbcimg.co.uk/media/images/57404000/jpg/_57404659_steve-kean.jpg"/> 
+    </item>  
+    <item> 
+      <title>Ferguson sets out New Year target</title>  
+      <description>Sir Alex Ferguson challenges his Manchester United side to keep up the pressure at the top of the table heading into 2012.</description>  
+      <link>http://news.bbc.co.uk/go/rss/int/news/-/sport1/hi/football/16237330.stm</link>  
+      <guid isPermaLink="false">http://news.bbc.co.uk/sport1/hi/football/16237330.stm</guid>  
+      <pubDate>Sun, 18 Dec 2011 17:09:26 GMT</pubDate>  
+      <media:thumbnail width="66" height="49" url="http://news.bbcimg.co.uk/media/images/57399000/jpg/_57399118_ferguson.jpg"/> 
+    </item>  
+    <item> 
+      <title>Beach Boys to get back together</title>  
+      <description>US band The Beach Boys announce plans to reunite to mark their 50th anniversary, which will include a new album and world tour.</description>  
+      <link>http://www.bbc.co.uk/go/rss/int/news/-/news/entertainment-arts-16232009</link>  
+      <guid isPermaLink="false">http://www.bbc.co.uk/news/entertainment-arts-16232009</guid>  
+      <pubDate>Sat, 17 Dec 2011 15:42:59 GMT</pubDate>  
+      <media:thumbnail width="66" height="49" url="http://news.bbcimg.co.uk/media/images/57389000/jpg/_57389825_beachboys1964_getty.jpg"/>  
+      <media:thumbnail width="144" height="81" url="http://news.bbcimg.co.uk/media/images/57389000/jpg/_57389790_beachboys1964_getty.jpg"/> 
+    </item>  
+    <item> 
+      <title>Tributes flood in for Hitchens</title>  
+      <description>British-born author, literary critic and journalist Christopher Hitchens dies in a Texas hospital, aged 62, after suffering from cancer.</description>  
+      <link>http://www.bbc.co.uk/go/rss/int/news/-/news/uk-16226580</link>  
+      <guid isPermaLink="false">http://www.bbc.co.uk/news/uk-16226580</guid>  
+      <pubDate>Fri, 16 Dec 2011 18:53:52 GMT</pubDate>  
+      <media:thumbnail width="66" height="49" url="http://news.bbcimg.co.uk/media/images/57364000/jpg/_57364352_011716730-1.jpg"/>  
+      <media:thumbnail width="144" height="81" url="http://news.bbcimg.co.uk/media/images/57364000/jpg/_57364340_011716730-1.jpg"/> 
+    </item>  
+    <item> 
+      <title>McFly's Judd wins Strictly crown</title>  
+      <description>McFly drummer Harry Judd is voted the winner of Strictly Come Dancing, beating actress Chelsee Healey to the glitterball trophy.</description>  
+      <link>http://www.bbc.co.uk/go/rss/int/news/-/news/entertainment-arts-16224867</link>  
+      <guid isPermaLink="false">http://www.bbc.co.uk/news/entertainment-arts-16224867</guid>  
+      <pubDate>Sat, 17 Dec 2011 22:09:06 GMT</pubDate>  
+      <media:thumbnail width="66" height="49" url="http://news.bbcimg.co.uk/media/images/57394000/jpg/_57394743_harry464.jpg"/>  
+      <media:thumbnail width="144" height="81" url="http://news.bbcimg.co.uk/media/images/57394000/jpg/_57394855_jex_1267881_de26-1.jpg"/> 
+    </item>  
+    <item> 
+      <title>VIDEO: 'My husband chopped off my fingers'</title>  
+      <description>Bangladeshi woman Hawa Akther Jui, whose husband is accused of cutting off her fingers after she began a college course without his permission, has spoken to the BBC about her determination to carry on with her studies.</description>  
+      <link>http://www.bbc.co.uk/go/rss/int/news/-/news/world-asia-16239784</link>  
+      <guid isPermaLink="false">http://www.bbc.co.uk/news/world-asia-16239784</guid>  
+      <pubDate>Mon, 19 Dec 2011 02:24:30 GMT</pubDate>  
+      <media:thumbnail width="66" height="49" url="http://news.bbcimg.co.uk/media/images/57403000/jpg/_57403415_fingers.jpg"/>  
+      <media:thumbnail width="144" height="81" url="http://news.bbcimg.co.uk/media/images/57403000/jpg/_57403413_fingers.jpg"/> 
+    </item>  
+    <item> 
+      <title>VIDEO: Son 'not ready' to lead North Korea</title>  
+      <description>Former US Assistant Secretary of State Christopher Hill, who led the delegation of the six-party nuclear talks on North Korea, says he believes Kim Jong-un is ''not ready'' to take over from his father, Kim Jong-il, who has died at the age of 69.</description>  
+      <link>http://www.bbc.co.uk/go/rss/int/news/-/news/world-asia-16240149</link>  
+      <guid isPermaLink="false">http://www.bbc.co.uk/news/world-asia-16240149</guid>  
+      <pubDate>Mon, 19 Dec 2011 05:22:46 GMT</pubDate>  
+      <media:thumbnail width="66" height="49" url="http://news.bbcimg.co.uk/media/images/57404000/jpg/_57404254_sonkorea.jpg"/>  
+      <media:thumbnail width="144" height="81" url="http://news.bbcimg.co.uk/media/images/57404000/jpg/_57404031_sonkorea.jpg"/> 
+    </item>  
+    <item> 
+      <title>VIDEO: Third day of clashes in Cairo</title>  
+      <description>Protesters have stoned security forces in Cairo as the death toll for three days of anti-military unrest in the Egyptian capital reaches 10.</description>  
+      <link>http://www.bbc.co.uk/go/rss/int/news/-/news/world-middle-east-16239837</link>  
+      <guid isPermaLink="false">http://www.bbc.co.uk/news/world-middle-east-16239837</guid>  
+      <pubDate>Mon, 19 Dec 2011 02:28:26 GMT</pubDate>  
+      <media:thumbnail width="66" height="49" url="http://news.bbcimg.co.uk/media/images/57403000/jpg/_57403842_cairo.jpg"/>  
+      <media:thumbnail width="144" height="81" url="http://news.bbcimg.co.uk/media/images/57403000/jpg/_57403840_cairo.jpg"/> 
+    </item>  
+    <item> 
+      <title>VIDEO: America's disappearing post offices</title>  
+      <description>Evan Kalish has crisscrossed America, trying to visit as many of the country's post offices as possible before they disappear.</description>  
+      <link>http://www.bbc.co.uk/go/rss/int/news/-/news/magazine-16192806</link>  
+      <guid isPermaLink="false">http://www.bbc.co.uk/news/magazine-16192806</guid>  
+      <pubDate>Mon, 19 Dec 2011 00:03:14 GMT</pubDate>  
+      <media:thumbnail width="66" height="49" url="http://news.bbcimg.co.uk/media/images/57363000/jpg/_57363987_again.jpg"/>  
+      <media:thumbnail width="144" height="81" url="http://news.bbcimg.co.uk/media/images/57338000/jpg/_57338914_jex_1265139_de27-1.jpg"/> 
+    </item>  
+    <item> 
+      <title>VIDEO: Loneliness of the long distance runner</title>  
+      <description>Olympic hopeful Nader el Masri has been allowed to leave Gaza to compete at the Arab Games.</description>  
+      <link>http://news.bbc.co.uk/go/rss/int/news/-/sport1/hi/olympic_games/london_2012/9661985.stm</link>  
+      <guid isPermaLink="false">http://news.bbc.co.uk/sport1/hi/olympic_games/london_2012/9661985.stm</guid>  
+      <pubDate>Sun, 18 Dec 2011 23:32:29 GMT</pubDate>  
+      <media:thumbnail width="66" height="49" url="http://news.bbcimg.co.uk/media/images/57379000/jpg/_57379658_nader640x360.jpg"/>  
+      <media:thumbnail width="144" height="81" url="http://news.bbcimg.co.uk/media/images/57379000/jpg/_57379659_nader640x360.jpg"/> 
+    </item>  
+    <item> 
+      <title>VIDEO: North Korea's Kim Jong-il dies at 69</title>  
+      <description>North Korean television has announced the death of Kim Jong-il, who has led the communist nation since the death of his father in 1994.</description>  
+      <link>http://www.bbc.co.uk/go/rss/int/news/-/news/world-asia-16240096</link>  
+      <guid isPermaLink="false">http://www.bbc.co.uk/news/world-asia-16240096</guid>  
+      <pubDate>Mon, 19 Dec 2011 04:07:59 GMT</pubDate>  
+      <media:thumbnail width="66" height="49" url="http://news.bbcimg.co.uk/media/images/57404000/jpg/_57404004_obit.jpg"/>  
+      <media:thumbnail width="144" height="81" url="http://news.bbcimg.co.uk/media/images/57404000/jpg/_57404006_obit.jpg"/> 
+    </item>  
+    <item> 
+      <title>VIDEO: Israel frees last swap prisoners</title>  
+      <description>Israel frees 550 Palestinian prisoners, in the second and final phase of the deal which secured the release of the Israeli soldier Gilad Shalit.</description>  
+      <link>http://www.bbc.co.uk/go/rss/int/news/-/news/world-middle-east-16239788</link>  
+      <guid isPermaLink="false">http://www.bbc.co.uk/news/world-middle-east-16239788</guid>  
+      <pubDate>Mon, 19 Dec 2011 02:26:07 GMT</pubDate>  
+      <media:thumbnail width="66" height="49" url="http://news.bbcimg.co.uk/media/images/57403000/jpg/_57403794_palbus.jpg"/>  
+      <media:thumbnail width="144" height="81" url="http://news.bbcimg.co.uk/media/images/57403000/jpg/_57403792_palbus.jpg"/> 
+    </item>  
+    <item> 
+      <title>VIDEO: Philippines flood clean-up begins</title>  
+      <description>Soldiers and volunteers are still searching for 800 people reported missing on the Philippines Mindanao island, as survivors begin to rebuild their homes and lives after floods triggered by Tropical Storm Washi.</description>  
+      <link>http://www.bbc.co.uk/go/rss/int/news/-/news/world-asia-16238497</link>  
+      <guid isPermaLink="false">http://www.bbc.co.uk/news/world-asia-16238497</guid>  
+      <pubDate>Sun, 18 Dec 2011 18:05:27 GMT</pubDate>  
+      <media:thumbnail width="66" height="49" url="http://news.bbcimg.co.uk/media/images/57401000/jpg/_57401686_jex_1268191_de23-1.jpg"/>  
+      <media:thumbnail width="144" height="81" url="http://news.bbcimg.co.uk/media/images/57401000/jpg/_57401684_jex_1268191_de23-1.jpg"/> 
+    </item>  
+    <item> 
+      <title>VIDEO: One-minute World News</title>  
+      <description>Watch the latest news summary from BBC World News. International news updated 24 hours a day.</description>  
+      <link>http://www.bbc.co.uk/go/rss/int/news/-/news/10462520</link>  
+      <guid isPermaLink="false">http://www.bbc.co.uk/news/10462520</guid>  
+      <pubDate>Mon, 19 Dec 2011 01:37:44 GMT</pubDate>  
+      <media:thumbnail width="66" height="49" url="http://news.bbcimg.co.uk/media/images/48037000/jpg/_48037472_worldnews66.jpg"/>  
+      <media:thumbnail width="144" height="81" url="http://news.bbcimg.co.uk/media/images/55182000/gif/_55182136__48351578_640x360-world-news-1.gif"/> 
+    </item>  
+    <item> 
+      <title>Somali piracy takes heavy toll on Philippine sailors</title>  
+      <description>Somali piracy takes a heavy toll on Filipino mariners</description>  
+      <link>http://www.bbc.co.uk/go/rss/int/news/-/news/world-asia-pacific-15259042</link>  
+      <guid isPermaLink="false">http://www.bbc.co.uk/news/world-asia-pacific-15259042</guid>  
+      <pubDate>Mon, 19 Dec 2011 00:36:21 GMT</pubDate>  
+      <media:thumbnail width="66" height="49" url="http://news.bbcimg.co.uk/media/images/55977000/jpg/_55977749_hostagestrussedup.jpg"/>  
+      <media:thumbnail width="144" height="81" url="http://news.bbcimg.co.uk/media/images/56013000/jpg/_56013945_img_4078.jpg"/> 
+    </item>  
+    <item> 
+      <title>Touchless phones 'to be out soon'</title>  
+      <description>Gesture-controlled devices are just around the corner</description>  
+      <link>http://www.bbc.co.uk/go/rss/int/news/-/news/technology-15970019</link>  
+      <guid isPermaLink="false">http://www.bbc.co.uk/news/technology-15970019</guid>  
+      <pubDate>Mon, 19 Dec 2011 00:25:36 GMT</pubDate>  
+      <media:thumbnail width="144" height="81" url="http://news.bbcimg.co.uk/media/images/57403000/jpg/_57403652_gesture_photoalbum_lr_092911.jpg"/> 
+    </item>  
+    <item> 
+      <title>A year in the life of a press photographer: Leon Neal</title>  
+      <description>A year in the life of a press photographer</description>  
+      <link>http://www.bbc.co.uk/go/rss/int/news/-/news/in-pictures-16180487</link>  
+      <guid isPermaLink="false">http://www.bbc.co.uk/news/in-pictures-16180487</guid>  
+      <pubDate>Mon, 19 Dec 2011 00:32:23 GMT</pubDate>  
+      <media:thumbnail width="66" height="49" url="http://news.bbcimg.co.uk/media/images/57342000/jpg/_57342774_leon201110.jpg"/>  
+      <media:thumbnail width="144" height="81" url="http://news.bbcimg.co.uk/media/images/57342000/jpg/_57342772_leon201110.jpg"/> 
+    </item>  
+    <item> 
+      <title>Iraq: New dawn for departing US troops</title>  
+      <description>US soldiers savour being a part of history in Iraqi withdrawal</description>  
+      <link>http://www.bbc.co.uk/go/rss/int/news/-/news/world-middle-east-16237996</link>  
+      <guid isPermaLink="false">http://www.bbc.co.uk/news/world-middle-east-16237996</guid>  
+      <pubDate>Sun, 18 Dec 2011 17:05:08 GMT</pubDate>  
+      <media:thumbnail width="66" height="49" url="http://news.bbcimg.co.uk/media/images/57398000/jpg/_57398982_37ye3i23.jpg"/>  
+      <media:thumbnail width="144" height="81" url="http://news.bbcimg.co.uk/media/images/57400000/jpg/_57400827_mof4848j.jpg"/> 
+    </item>  
+    <item> 
+      <title>The year when a lot happened</title>  
+      <description>Despots fell, cities blazed and one manhunt was over</description>  
+      <link>http://www.bbc.co.uk/go/rss/int/news/-/news/magazine-16089232</link>  
+      <guid isPermaLink="false">http://www.bbc.co.uk/news/magazine-16089232</guid>  
+      <pubDate>Mon, 19 Dec 2011 00:13:52 GMT</pubDate>  
+      <media:thumbnail width="66" height="49" url="http://news.bbcimg.co.uk/media/images/57382000/jpg/_57382309_riot_pa464.jpg"/>  
+      <media:thumbnail width="144" height="81" url="http://news.bbcimg.co.uk/media/images/57372000/jpg/_57372693_riot_pa464.jpg"/> 
+    </item>  
+    <item> 
+      <title>In pictures: Rwanda's poo-powered prisons</title>  
+      <description>Rwanda's bean-eating prisoners cook on gas from their own waste</description>  
+      <link>http://www.bbc.co.uk/go/rss/int/news/-/news/world-africa-16203507</link>  
+      <guid isPermaLink="false">http://www.bbc.co.uk/news/world-africa-16203507</guid>  
+      <pubDate>Sun, 18 Dec 2011 00:58:02 GMT</pubDate>  
+      <media:thumbnail width="66" height="49" url="http://news.bbcimg.co.uk/media/images/57371000/jpg/_57371695_464.jpg"/>  
+      <media:thumbnail width="144" height="81" url="http://news.bbcimg.co.uk/media/images/57374000/jpg/_57374655_9.jpg"/> 
+    </item>  
+    <item> 
+      <title>Is Canada a beaver or a bear?</title>  
+      <description>Time for Canada to adopt a more assertive national symbol?</description>  
+      <link>http://www.bbc.co.uk/go/rss/int/news/-/news/magazine-16219305</link>  
+      <guid isPermaLink="false">http://www.bbc.co.uk/news/magazine-16219305</guid>  
+      <pubDate>Sat, 17 Dec 2011 12:04:17 GMT</pubDate>  
+      <media:thumbnail width="66" height="49" url="http://news.bbcimg.co.uk/media/images/57376000/jpg/_57376975_beaver_bear_144ap_pa.jpg"/>  
+      <media:thumbnail width="144" height="81" url="http://news.bbcimg.co.uk/media/images/57395000/jpg/_57395813_beaver_pa144.jpg"/> 
+    </item> 
+  </channel> 
+</rss>
