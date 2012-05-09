@@ -38,7 +38,7 @@ public class LuceneSearchApp {
 	private Directory index;
 
 	public LuceneSearchApp() {
-
+		
 	}
 
 	public void index(List<RssFeedDocument> docs) throws CorruptIndexException, LockObtainFailedException, IOException {
@@ -216,7 +216,26 @@ public class LuceneSearchApp {
 	public static void main(String[] args) throws CorruptIndexException, LockObtainFailedException, IOException {
 		if (args.length > 0) {
 			LuceneSearchApp engine = new LuceneSearchApp();
+			
+			// Assignment 3
+			/* Viralliset ohjeet:
+			 * goal: perform the search in the chosen comparison scenario with the 
+			 * given document collection and your search task
+			 * 
+			 * - performs the indexing of the document collection, 
+			 *   the search and prints the results in the standard output.
+			 * - The path to the XML file containing the document collection is passed
+			 *   to main as a command-line argument.
+			 * - You can decide whether to use a file- or memory-based search index.
+			 * - The queries for the search task can be hard-coded in the program
+			 */
+			
+			// TODO: index documents
+			// TODO: search with VSM and BM25
+			// TODO: print results
+			// TODO: compare
 
+			// Assignment 1 code
 			RssFeedParser parser = new RssFeedParser();
 			parser.parse(args[0]);
 			List<RssFeedDocument> docs = parser.getDocuments();
