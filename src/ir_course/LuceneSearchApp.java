@@ -33,15 +33,24 @@ import org.apache.lucene.store.RAMDirectory;
 import org.apache.lucene.util.Version;
 
 public class LuceneSearchApp {
+	
+	// Queries for A3 can be hard-coded
+	private final String[] queries = {
+			"simulation industrial environment",
+			"computer and physical model simulation",
+			"industrial process simulation",
+			"manufacturing process models"
+	};
 
 	private StandardAnalyzer analyzer;
 	private Directory index;
 
 	public LuceneSearchApp() {
-		
+
 	}
 
-	public void index(List<RssFeedDocument> docs) throws CorruptIndexException, LockObtainFailedException, IOException {
+	public void index(List<DocumentInCollection> docs) 
+	throws CorruptIndexException, LockObtainFailedException, IOException {
 
 		analyzer = new StandardAnalyzer(Version.LUCENE_40);
 
@@ -49,14 +58,15 @@ public class LuceneSearchApp {
 		IndexWriterConfig config = new IndexWriterConfig(Version.LUCENE_40, analyzer);
 		IndexWriter w = new IndexWriter(index, config);
 
-		for(RssFeedDocument rssDoc : docs) {
-			addDoc(w, rssDoc);
+		for(DocumentInCollection xmlDoc : docs) {
+			addDoc(w, xmlDoc);
 		}
 
 		w.close();
 	}
 
-	private void addDoc(IndexWriter w, RssFeedDocument rssDoc) throws CorruptIndexException, IOException {
+	private void addDoc(IndexWriter w, DocumentInCollection xmlDoc) 
+	throws CorruptIndexException, IOException {
 		Document doc = new Document();
 
 		FieldType textFieldType = new FieldType();
@@ -64,25 +74,35 @@ public class LuceneSearchApp {
 		textFieldType.setStored(true);
 		textFieldType.setTokenized(true);
 
-		doc.add(new Field("title", rssDoc.getTitle(), textFieldType));
-		doc.add(new Field("description", rssDoc.getDescription(), textFieldType));
-		
+		doc.add(new Field("title", xmlDoc.getTitle(), textFieldType));
+		doc.add(new Field("description", xmlDoc.getAbstractText(), textFieldType));
+
 		/*
 		Lucene API: For indexing a Date or Calendar, just get the unix timestamp as long using 
 		Date.getTime() or Calendar.getTimeInMillis() and index this as a numeric 
 		value with LongField and use NumericRangeQuery to query it.
-		*/
+		 */
 
-		FieldType numFieldType = new FieldType();
-		numFieldType.setIndexed(true);
-		numFieldType.setStored(true);
-		
-		Long pubDate = rssDoc.getPubDate().getTime();
-		NumericField numericField = new NumericField("pubdate", numFieldType);
-		numericField.setLongValue(pubDate);
-		doc.add(numericField);
-		
 		w.addDocument(doc);
+	}
+	
+	public List<String> VSMsearch() throws CorruptIndexException, IOException {
+		// TODO: implement
+		return null;
+	}
+	
+	public List<String> BM25search(String query) throws CorruptIndexException, IOException {
+
+		// TODO: implement (Noora)
+		List<String> results = new LinkedList<String>();
+
+		// implement the Lucene search here
+		IndexReader reader = IndexReader.open(index);
+		IndexSearcher searcher = new IndexSearcher(reader);
+
+		BooleanQuery bq = new BooleanQuery();
+
+		return results;
 	}
 
 	public List<String> search(List<String> inTitle, List<String> notInTitle, 
@@ -98,7 +118,7 @@ public class LuceneSearchApp {
 		IndexSearcher searcher = new IndexSearcher(reader);
 
 		BooleanQuery bq = new BooleanQuery();
-		
+
 		// Title
 		if(inTitle != null) {
 			for(String title : inTitle) {
@@ -111,7 +131,7 @@ public class LuceneSearchApp {
 				bq.add(new TermQuery(new Term("title", title)), BooleanClause.Occur.MUST_NOT);
 			}
 		}
-		
+
 		// Desc
 		if(inDescription != null) {
 			for(String desc : inDescription) {
@@ -123,47 +143,47 @@ public class LuceneSearchApp {
 				bq.add(new TermQuery(new Term("description", desc)), BooleanClause.Occur.MUST_NOT);
 			}
 		}
-		
+
 		// Pubdate
 		if(startDate != null || endDate != null) {
 			// start/end date or null, which leaves the search half open
 			Long start = startDate != null ? stringToTime(startDate, false) : null;
 			Long end = endDate != null ? stringToTime(endDate, true) : null;
-			
+
 			// Ideal value in most cases for 64 bit data types (long, double) is 6 or 8.
 			int precisionStep = 8;
 			boolean inclusive = true;
-			
+
 			bq.add(NumericRangeQuery.newLongRange("pubdate", precisionStep, start, end, 
 					inclusive, inclusive), BooleanClause.Occur.MUST);
 		}
-		
+
 		int bigEnoughHitCount = 100;
-		
+
 		ScoreDoc[] hits = searcher.search(bq, bigEnoughHitCount).scoreDocs;
-		
+
 		for(ScoreDoc hit : hits) {
 			Document doc = searcher.doc(hit.doc);
 			results.add(doc.get("title"));
 		}
-		
+
 
 		return results;
 	}
-	
+
 	private static long stringToTime(String timeString, boolean isEndDate) {
 		String[] parts = timeString.split("-");
-		
+
 		int year = Integer.parseInt(parts[0]);
 		int month = Integer.parseInt(parts[1]) - 1; // 0-based
 		int day = Integer.parseInt(parts[2]);
-		
+
 		if(isEndDate) {
 			day += 1;
 		}
-		
+
 		GregorianCalendar c = new GregorianCalendar(year, month, day);
-		
+
 		return c.getTimeInMillis();
 	}
 
@@ -217,25 +237,29 @@ public class LuceneSearchApp {
 		if (args.length > 0) {
 			LuceneSearchApp engine = new LuceneSearchApp();
 			
-			// Assignment 3
-			/* Viralliset ohjeet:
-			 * goal: perform the search in the chosen comparison scenario with the 
-			 * given document collection and your search task
-			 * 
-			 * - performs the indexing of the document collection, 
-			 *   the search and prints the results in the standard output.
-			 * - The path to the XML file containing the document collection is passed
-			 *   to main as a command-line argument.
-			 * - You can decide whether to use a file- or memory-based search index.
-			 * - The queries for the search task can be hard-coded in the program
-			 */
+			// Read and index XML collection
+			DocumentCollectionParser parser = new DocumentCollectionParser();
+			parser.parse(args[0]);
+			List<DocumentInCollection> docs = parser.getDocuments();
 			
-			// TODO: index documents
-			// TODO: search with VSM and BM25
-			// TODO: print results
-			// TODO: compare
+			engine.index(docs);
+			
+			// TODO: search and rank with VSM and BM25
+			for(String query : engine.queries) {
+				List<String> VSMresults = engine.VSMsearch();
+				List<String> BM25results = engine.BM25search(query);
+			
+				// TODO: print results
+				engine.printResults(VSMresults);
+				engine.printResults(BM25results);
+			}
+			
+			// TODO: evaluate & compare
 
-			// Assignment 1 code
+			
+			/*
+			 * Assignment 1 code for reference:
+			 * 
 			RssFeedParser parser = new RssFeedParser();
 			parser.parse(args[0]);
 			List<RssFeedDocument> docs = parser.getDocuments();
@@ -291,8 +315,11 @@ public class LuceneSearchApp {
 			notInDescription.add("israel");
 			results = engine.search(null, null, null, notInDescription, null, "2011-12-18");
 			engine.printResults(results);
+			 */
 		}
 		else
-			System.out.println("ERROR: the path of a RSS Feed file has to be passed as a command line argument.");
+			System.out.println("ERROR: the path of a XML Feed file has to be passed " +
+					"as a command line argument.");
+		}
+		
 	}
-}
