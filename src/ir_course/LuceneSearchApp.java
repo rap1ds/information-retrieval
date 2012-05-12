@@ -15,7 +15,6 @@ import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.document.Field;
 import org.apache.lucene.document.FieldType;
-import org.apache.lucene.document.NumericField;
 import org.apache.lucene.index.CorruptIndexException;
 import org.apache.lucene.index.IndexReader;
 import org.apache.lucene.index.IndexWriter;
@@ -33,7 +32,7 @@ import org.apache.lucene.store.RAMDirectory;
 import org.apache.lucene.util.Version;
 
 public class LuceneSearchApp {
-	
+
 	// Queries for A3 can be hard-coded
 	private final String[] queries = {
 			"simulation industrial environment",
@@ -74,14 +73,11 @@ public class LuceneSearchApp {
 		textFieldType.setStored(true);
 		textFieldType.setTokenized(true);
 
+		// Index all the searchable content into one field and the title to another for reference
 		doc.add(new Field("title", xmlDoc.getTitle(), textFieldType));
-		doc.add(new Field("description", xmlDoc.getAbstractText(), textFieldType));
+		doc.add(new Field("content", xmlDoc.getTitle() + " " + xmlDoc.getAbstractText(), textFieldType));
 
-		/*
-		Lucene API: For indexing a Date or Calendar, just get the unix timestamp as long using 
-		Date.getTime() or Calendar.getTimeInMillis() and index this as a numeric 
-		value with LongField and use NumericRangeQuery to query it.
-		 */
+		// TODO: Is indexing relevance, query etc necessary for calculating precicion / recall?
 
 		w.addDocument(doc);
 	}
@@ -89,37 +85,6 @@ public class LuceneSearchApp {
 	// TODO: implement
 	public List<String> VSMsearch() throws CorruptIndexException, IOException {
 		List<String> results = new LinkedList<String>();
-		return results;
-	}
-
-	// TODO: implement (Noora)
-	public List<String> BM25search(String query, int hitLimit) throws CorruptIndexException, IOException {
-
-		List<String> results = new LinkedList<String>();
-
-		// implement the Lucene search here
-		IndexReader reader = IndexReader.open(index);
-		IndexSearcher searcher = new IndexSearcher(reader);
-
-		BooleanQuery bq = new BooleanQuery();
-
-		// Title
-		for(String keyword : query.split(" ")) {
-			bq.add(new TermQuery(new Term("title", keyword)), BooleanClause.Occur.SHOULD);
-		}
-
-		// Abstract
-		for(String keyword : query.split(" ")) {
-			bq.add(new TermQuery(new Term("abstract", keyword)), BooleanClause.Occur.SHOULD);
-		}
-
-		ScoreDoc[] hits = searcher.search(bq, hitLimit).scoreDocs;
-
-		for(ScoreDoc hit : hits) {
-			Document doc = searcher.doc(hit.doc);
-			results.add(doc.get("title"));
-		}
-
 		return results;
 	}
 
@@ -254,32 +219,33 @@ public class LuceneSearchApp {
 	public static void main(String[] args) throws CorruptIndexException, LockObtainFailedException, IOException {
 		if (args.length > 0) {
 			LuceneSearchApp engine = new LuceneSearchApp();
-			
+			BM25Searcher searcher2 = new BM25Searcher();
+
 			// Read and index XML collection
 			DocumentCollectionParser parser = new DocumentCollectionParser();
 			parser.parse(args[0]);
 			List<DocumentInCollection> docs = parser.getDocuments();
-			
+
 			engine.index(docs);
-			
+
 			// TODO: search and rank with VSM and BM25
 			for(String query : engine.queries) {
 				System.out.println();
 				System.out.println(query);
-				
+
 				int hitLimit = 10;
-				
+
 				List<String> VSMresults = engine.VSMsearch();
-				List<String> BM25results = engine.BM25search(query, hitLimit);
-			
+				List<String> BM25results = searcher2.BM25search(engine.index, query, hitLimit);
+
 				// TODO: print results
 				engine.printResults(VSMresults);
 				engine.printResults(BM25results);
 			}
-			
+
 			// TODO: evaluate & compare
 
-			
+
 			/*
 			 * Assignment 1 code for reference:
 			 * 
@@ -342,7 +308,7 @@ public class LuceneSearchApp {
 		}
 		else
 			System.out.println("ERROR: the path of a XML Feed file has to be passed " +
-					"as a command line argument.");
-		}
-		
+			"as a command line argument.");
 	}
+
+}
