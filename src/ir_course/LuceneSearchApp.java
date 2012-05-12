@@ -85,15 +85,16 @@ public class LuceneSearchApp {
 
 		w.addDocument(doc);
 	}
-	
-	public List<String> VSMsearch() throws CorruptIndexException, IOException {
-		// TODO: implement
-		return null;
-	}
-	
-	public List<String> BM25search(String query) throws CorruptIndexException, IOException {
 
-		// TODO: implement (Noora)
+	// TODO: implement
+	public List<String> VSMsearch() throws CorruptIndexException, IOException {
+		List<String> results = new LinkedList<String>();
+		return results;
+	}
+
+	// TODO: implement (Noora)
+	public List<String> BM25search(String query, int hitLimit) throws CorruptIndexException, IOException {
+
 		List<String> results = new LinkedList<String>();
 
 		// implement the Lucene search here
@@ -101,6 +102,23 @@ public class LuceneSearchApp {
 		IndexSearcher searcher = new IndexSearcher(reader);
 
 		BooleanQuery bq = new BooleanQuery();
+
+		// Title
+		for(String keyword : query.split(" ")) {
+			bq.add(new TermQuery(new Term("title", keyword)), BooleanClause.Occur.SHOULD);
+		}
+
+		// Abstract
+		for(String keyword : query.split(" ")) {
+			bq.add(new TermQuery(new Term("abstract", keyword)), BooleanClause.Occur.SHOULD);
+		}
+
+		ScoreDoc[] hits = searcher.search(bq, hitLimit).scoreDocs;
+
+		for(ScoreDoc hit : hits) {
+			Document doc = searcher.doc(hit.doc);
+			results.add(doc.get("title"));
+		}
 
 		return results;
 	}
@@ -246,8 +264,13 @@ public class LuceneSearchApp {
 			
 			// TODO: search and rank with VSM and BM25
 			for(String query : engine.queries) {
+				System.out.println();
+				System.out.println(query);
+				
+				int hitLimit = 10;
+				
 				List<String> VSMresults = engine.VSMsearch();
-				List<String> BM25results = engine.BM25search(query);
+				List<String> BM25results = engine.BM25search(query, hitLimit);
 			
 				// TODO: print results
 				engine.printResults(VSMresults);
