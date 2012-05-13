@@ -23,16 +23,26 @@ import org.apache.lucene.index.Term;
 import org.apache.lucene.search.BooleanClause;
 import org.apache.lucene.search.BooleanQuery;
 import org.apache.lucene.search.IndexSearcher;
+import org.apache.lucene.search.MultiTermQuery;
 import org.apache.lucene.search.NumericRangeQuery;
 import org.apache.lucene.search.ScoreDoc;
 import org.apache.lucene.search.TermQuery;
+import org.apache.lucene.search.TermStatistics;
+import org.apache.lucene.search.similarities.BM25Similarity;
+import org.apache.lucene.search.similarities.BasicSimilarityProvider;
+import org.apache.lucene.search.similarities.DefaultSimilarity;
+import org.apache.lucene.search.similarities.DefaultSimilarityProvider;
+import org.apache.lucene.search.similarities.Similarity;
+import org.apache.lucene.search.similarities.SimilarityProvider;
+import org.apache.lucene.search.similarities.TFIDFSimilarity;
+//import org.apache.lucene.search.similarities;
 import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.LockObtainFailedException;
 import org.apache.lucene.store.RAMDirectory;
+import org.apache.lucene.util.TermContext;
 import org.apache.lucene.util.Version;
 
 public class LuceneSearchApp {
-
 	// Queries for A3 can be hard-coded
 	private final String[] queries = {
 			"simulation industrial environment",
@@ -66,6 +76,7 @@ public class LuceneSearchApp {
 
 	private void addDoc(IndexWriter w, DocumentInCollection xmlDoc) 
 	throws CorruptIndexException, IOException {
+
 		Document doc = new Document();
 
 		FieldType textFieldType = new FieldType();
@@ -83,8 +94,30 @@ public class LuceneSearchApp {
 	}
 
 	// TODO: implement
-	public List<String> VSMsearch() throws CorruptIndexException, IOException {
+	public List<String> VSMsearch(String query) throws CorruptIndexException, IOException {
 		List<String> results = new LinkedList<String>();
+		IndexReader reader = IndexReader.open(index);
+		IndexSearcher searcher = new IndexSearcher(reader);
+		// Ilmeisesti Defaultprovider toteuttaa VSM- similarityn...
+		DefaultSimilarityProvider provider = new DefaultSimilarityProvider();
+		searcher.setSimilarityProvider(provider);
+		
+		BooleanQuery bq = new BooleanQuery();
+		String[] words = query.split(" ");
+		TermStatistics[] termStats = new TermStatistics[words.length];
+		for (String word : words) {
+			Term t = new Term("content", word);
+			TermQuery tq = new TermQuery(t);
+			bq.add(tq,BooleanClause.Occur.SHOULD);
+		}
+		
+		ScoreDoc[] hits = searcher.search(bq, 10).scoreDocs;
+
+		for(ScoreDoc hit : hits) {
+			Document doc = searcher.doc(hit.doc);
+			results.add(doc.get("title"));
+		}
+		
 		return results;
 	}
 
@@ -99,6 +132,7 @@ public class LuceneSearchApp {
 		// implement the Lucene search here
 		IndexReader reader = IndexReader.open(index);
 		IndexSearcher searcher = new IndexSearcher(reader);
+
 
 		BooleanQuery bq = new BooleanQuery();
 
@@ -220,7 +254,6 @@ public class LuceneSearchApp {
 		if (args.length > 0) {
 			LuceneSearchApp engine = new LuceneSearchApp();
 			BM25Searcher searcher2 = new BM25Searcher();
-
 			// Read and index XML collection
 			DocumentCollectionParser parser = new DocumentCollectionParser();
 			parser.parse(args[0]);
@@ -234,12 +267,12 @@ public class LuceneSearchApp {
 				System.out.println(query);
 
 				int hitLimit = 10;
-
-				List<String> VSMresults = engine.VSMsearch();
+				List<String> VSMresults = engine.VSMsearch(query);
 				List<String> BM25results = searcher2.BM25search(engine.index, query, hitLimit);
 
 				// TODO: print results
 				engine.printResults(VSMresults);
+				System.out.println("-------------------------------------------------------------------------------------");
 				engine.printResults(BM25results);
 			}
 
