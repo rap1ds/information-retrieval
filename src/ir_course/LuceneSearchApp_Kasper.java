@@ -43,7 +43,7 @@ import org.apache.lucene.store.RAMDirectory;
 import org.apache.lucene.util.TermContext;
 import org.apache.lucene.util.Version;
 
-public class LuceneSearchApp {
+public class LuceneSearchApp_Kasper {
 	// Queries for A3 can be hard-coded
 	public int relevantsInDocument;
 	public int relevantsInSearch;
@@ -58,7 +58,7 @@ public class LuceneSearchApp {
 	private StandardAnalyzer analyzer;
 	private Directory index;
 
-	public LuceneSearchApp() {
+	public LuceneSearchApp_Kasper() {
 		document_count=200;
 		this.relevantsInSearch=0;
 	}
@@ -275,7 +275,7 @@ public class LuceneSearchApp {
 	public static void main(String[] args) throws CorruptIndexException, LockObtainFailedException, IOException {
 		if (args.length > 0) {
 			int allRelevants = 0; // 138
-			LuceneSearchApp engine = new LuceneSearchApp();
+			LuceneSearchApp_Kasper engine = new LuceneSearchApp_Kasper();
 			BM25Searcher searcher2 = new BM25Searcher();
 			// Read and index XML collection
 			DocumentCollectionParser parser = new DocumentCollectionParser();
