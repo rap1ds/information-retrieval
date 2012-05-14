@@ -1,0 +1,416 @@
+
+Query: 
+simulation industrial environment
+
+VSM
+
+Recall, Precision
+0.007246376811594203, 1.0
+0.10144927536231885, 0.875
+0.2028985507246377, 0.7777777777777778
+0.30434782608695654, 0.75
+0.4057971014492754, 0.717948717948718
+0.5, 0.575
+0.6014492753623188, 0.453551912568306
+0.7028985507246377, 0.31493506493506496
+0.8043478260869565, 0.18974358974358974
+0.9057971014492754, 0.049682034976152624
+1.0, 0.05452390359541683
+
+Top documents:
+
+Analysis of selected industrial decision rules in a dynamic environment by means of computer simulation
+An intelligent modeling system for simulation manufacturing processes
+Identification of Multivariable Industrial Processes: For Simulation, Diagnosis and Control
+A simulation model for ergonomic design of industrial processes
+WATIS2: Design and Application of an Environment Simulation System for Test Improvement of Control Software for Automatic Logistic Systems
+Possibilities of the direct implementation of control algorithms from environment MATLAB/Simulink
+Manufacturing simulation: a new tool for robotics, FMS and industrial process design
+Manufacturing Simulation: A New Tool for Robotics, FMS, and Industrial Process Design
+Iterative use of simulation and scheduling methodologies to improve productivity
+Simulating Realistic Bridging and Crosstalk Faults in an Industrial Setting
+Emulation models for testing of process control systems
+Development environment of expert system to operate in real time with industrial automation supervisory system
+Analysis and enhancement of planning and scheduling applications in a distributed simulation testbed
+Dynamic priority allocation for conflict free coordinated manipulation of multiple agents
+Simulation based scheduling system in a semiconductor backend facility
+A new concept of the industrial process simulation-cybernetic approach using distributed access control schemes
+The simulation engine: a platform for developing industrial process knowledge-based discrete event simulations
+The new design: the changing role of industrial engineers in the design process through the use of simulation
+Distributed Simulation in Manufacturing and Logistics
+Automatic Modifications of High Level VHDL Descriptions for Fault Detection or Tolerance
+Memory Testing Under Different Stress Conditions: An Industrial Evaluation
+Industrial Strength Formal Verification Techniques for Hardware Designs
+Fuzzy volumes, principles and applications
+High performance air pollution modeling for a power plant environment
+Manufacturing modeling methods: an approach and interface for building generic manufacturing kanban-systems models
+Study on the evolutionary optimisation of the topology of network control systems
+Numerical health check of industrial simulation codes from HPC environments to new hardware technologies
+Stereo vision based navigation for automated vehicles in industry
+Modeling and simulation of a column industrial robot type used in mounting processes
+Rapid Modeling and Discovery of Priority Dispatching Rules: An Autonomous Learning Approach
+
+Average precision: 0.5234693637768205
+
+BM25
+
+Recall, Precision
+0.007246376811594203, 1.0
+0.10144927536231885, 0.6666666666666666
+0.2028985507246377, 0.717948717948718
+0.30434782608695654, 0.75
+0.4057971014492754, 0.7368421052631579
+0.5, 0.5655737704918032
+0.6014492753623188, 0.46629213483146065
+0.7028985507246377, 0.2650273224043716
+0.8043478260869565, 0.18974358974358974
+0.9057971014492754, 0.049682034976152624
+1.0, 0.05452390359541683
+
+Top documents:
+
+Possibilities of the direct implementation of control algorithms from environment MATLAB/Simulink
+Analysis of selected industrial decision rules in a dynamic environment by means of computer simulation
+An intelligent modeling system for simulation manufacturing processes
+WATIS2: Design and Application of an Environment Simulation System for Test Improvement of Control Software for Automatic Logistic Systems
+Iterative use of simulation and scheduling methodologies to improve productivity
+Emulation models for testing of process control systems
+Simulating Realistic Bridging and Crosstalk Faults in an Industrial Setting
+Dynamic priority allocation for conflict free coordinated manipulation of multiple agents
+Development environment of expert system to operate in real time with industrial automation supervisory system
+Simulation based scheduling system in a semiconductor backend facility
+Memory Testing Under Different Stress Conditions: An Industrial Evaluation
+Industrial Strength Formal Verification Techniques for Hardware Designs
+Analysis and enhancement of planning and scheduling applications in a distributed simulation testbed
+Distributed Simulation in Manufacturing and Logistics
+Fuzzy volumes, principles and applications
+High performance air pollution modeling for a power plant environment
+Automatic Modifications of High Level VHDL Descriptions for Fault Detection or Tolerance
+Modeling and simulation of a column industrial robot type used in mounting processes
+Manufacturing modeling methods: an approach and interface for building generic manufacturing kanban-systems models
+Numerical health check of industrial simulation codes from HPC environments to new hardware technologies
+Stereo vision based navigation for automated vehicles in industry
+Study on the evolutionary optimisation of the topology of network control systems
+Application of simulation for manufacturing processes improvements: using simulation techniques for continuous process verification in industrial system development
+Identification of Multivariable Industrial Processes: For Simulation, Diagnosis and Control
+A simulation model for ergonomic design of industrial processes
+Rapid Modeling and Discovery of Priority Dispatching Rules: An Autonomous Learning Approach
+High performance air pollution simulation on shared memory systems
+Manufacturing simulation: a new tool for robotics, FMS and industrial process design
+Manufacturing Simulation: A New Tool for Robotics, FMS, and Industrial Process Design
+Design and simulation of a fuzzy substrate feeding controller for an industrial scale fed-batch baker yeast fermentor
+
+Average precision: 0.4965727496292125
+-------------------------------------------------------------------------------------
+
+Query: 
+computer and physical model simulation
+
+VSM
+
+Recall, Precision
+0.007246376811594203, 1.0
+0.10144927536231885, 0.5833333333333334
+0.2028985507246377, 0.6086956521739131
+0.30434782608695654, 0.525
+0.4057971014492754, 0.42105263157894735
+0.5, 0.375
+0.6014492753623188, 0.3593073593073593
+0.7028985507246377, 0.2966360856269113
+0.8043478260869565, 0.2505643340857788
+0.9057971014492754, 0.20064205457463885
+1.0, 0.05326128907757623
+
+Top documents:
+
+Robot simulation physics validation
+Robust simulation of lamprey tracking
+Dynamic simulation model for planning physical distribution systems: Discussion of the computer model
+Cyber attack modeling and simulation for network security analysis
+Computational-Physical State Co-regulation in Cyber-Physical Systems
+Real time physics: class notes
+Methods for special applications: Cell-DEVS quantization techniques in a fire spreading application
+A mixed reality approach for interactively blending dynamic models with corresponding physical phenomena
+A hybrid approach for multiresolution modeling of large-scale scientific data
+Simulating the dynamics of auroral phenomena
+Interactive virtual try-on clothing design systems
+Limits to Modeling: Balancing Ambition and Outcome in Astrophysics and Cosmology
+Technical Section: Developmental modelling with SDS
+Integrating Dynamic and Geometry Model Components through Ontology-Based Inference
+The Role of Modeling and Asynchronous Distributed Simulation in Analyzing Complex Systems of the Future
+A CAD-oriented cloth simulation system with stable and efficient ODE solution
+Animating oscillatory motion with overlap: wiggly splines
+A survey of the modelling and rendering of the earth's atmosphere
+High Fidelity Haptic Rendering of Frictional Contact with Deformable Objects in Virtual Environments using Multi-rate Simulation
+Quantum Computing and Information Extraction for Dynamical Quantum Systems
+Grid-Boxing for Spatial Simulation Performance Optimisation
+CartaBlanca— a pure-Java, component-based systems simulation tool for coupled non-linear physics on unstructured grids
+Geometric and haptic modelling of textile artefacts
+HEMET: Mathematical model of biochemical pathways for simulation and prediction of HEpatocyte METabolism
+Determining over- and under-constrained systems of equations using structural constraint delta
+Controlling individual agents in high-density crowd simulation
+Physical simulation for animation and visual effects: parallelization and characterization for chip multiprocessors
+Challenges of biological realism and validation in simulation-based medical education
+A simulation model for ergonomic design of industrial processes
+Dealing with space in multi--agent systems: a model for situated MAS
+
+Average precision: 0.424862976341678
+
+BM25
+
+Recall, Precision
+0.007246376811594203, 1.0
+0.10144927536231885, 0.56
+0.2028985507246377, 0.509090909090909
+0.30434782608695654, 0.5526315789473685
+0.4057971014492754, 0.4307692307692308
+0.5, 0.39204545454545453
+0.6014492753623188, 0.3593073593073593
+0.7028985507246377, 0.303125
+0.8043478260869565, 0.23617021276595745
+0.9057971014492754, 0.1874062968515742
+1.0, 0.05326128907757623
+
+Top documents:
+
+Robot simulation physics validation
+Robust simulation of lamprey tracking
+Dynamic simulation model for planning physical distribution systems: Discussion of the computer model
+Real time physics: class notes
+Cyber attack modeling and simulation for network security analysis
+Simulating the dynamics of auroral phenomena
+Computational-Physical State Co-regulation in Cyber-Physical Systems
+Methods for special applications: Cell-DEVS quantization techniques in a fire spreading application
+Technical Section: Developmental modelling with SDS
+A mixed reality approach for interactively blending dynamic models with corresponding physical phenomena
+Limits to Modeling: Balancing Ambition and Outcome in Astrophysics and Cosmology
+A CAD-oriented cloth simulation system with stable and efficient ODE solution
+A hybrid approach for multiresolution modeling of large-scale scientific data
+Integrating Dynamic and Geometry Model Components through Ontology-Based Inference
+High Fidelity Haptic Rendering of Frictional Contact with Deformable Objects in Virtual Environments using Multi-rate Simulation
+Interactive virtual try-on clothing design systems
+Animating oscillatory motion with overlap: wiggly splines
+The Role of Modeling and Asynchronous Distributed Simulation in Analyzing Complex Systems of the Future
+A survey of the modelling and rendering of the earth's atmosphere
+Discrete Event Front-tracking Simulation of a Physical Fire-spread Model
+CartaBlanca— a pure-Java, component-based systems simulation tool for coupled non-linear physics on unstructured grids
+Quantum Computing and Information Extraction for Dynamical Quantum Systems
+Geometric and haptic modelling of textile artefacts
+HEMET: Mathematical model of biochemical pathways for simulation and prediction of HEpatocyte METabolism
+Grid-Boxing for Spatial Simulation Performance Optimisation
+Determining over- and under-constrained systems of equations using structural constraint delta
+Anisotropic cloth modeling for material fabric
+Controlling individual agents in high-density crowd simulation
+Challenges of biological realism and validation in simulation-based medical education
+Physical simulation for animation and visual effects: parallelization and characterization for chip multiprocessors
+
+Average precision: 0.41670975739594823
+-------------------------------------------------------------------------------------
+
+Query: 
+industrial process simulation
+
+VSM
+
+Recall, Precision
+0.007246376811594203, 1.0
+0.10144927536231885, 0.8235294117647058
+0.2028985507246377, 0.7567567567567568
+0.30434782608695654, 0.6363636363636364
+0.4057971014492754, 0.6511627906976745
+0.5, 0.6106194690265486
+0.6014492753623188, 0.6014492753623188
+0.7028985507246377, 0.5950920245398773
+0.8043478260869565, 0.46835443037974683
+0.9057971014492754, 0.3561253561253561
+1.0, 0.05426661423515533
+
+Top documents:
+
+Manufacturing simulation: a new tool for robotics, FMS and industrial process design
+Manufacturing Simulation: A New Tool for Robotics, FMS, and Industrial Process Design
+A new concept of the industrial process simulation-cybernetic approach using distributed access control schemes
+The simulation engine: a platform for developing industrial process knowledge-based discrete event simulations
+The new design: the changing role of industrial engineers in the design process through the use of simulation
+Identification of Multivariable Industrial Processes: For Simulation, Diagnosis and Control
+A simulation model for ergonomic design of industrial processes
+Parameter validity control in process control systems
+Iterative use of simulation and scheduling methodologies to improve productivity
+Application of simulation for manufacturing processes improvements: using simulation techniques for continuous process verification in industrial system development
+A system simulation framework
+Development environment of expert system to operate in real time with industrial automation supervisory system
+Computer simulation of a parametric optimization problem for an industrial process
+Simulation based scheduling system in a semiconductor backend facility
+Design and simulation of a fuzzy substrate feeding controller for an industrial scale fed-batch baker yeast fermentor
+Researches on Digital Industrial Design System and its Application on Air Nailer Design Process
+Quantitative simulation approach to ameliorate deadlock concerns in automotive manufacture
+Computer-supported competence management: Evolution of industrial processes as life cycles of organizations
+Business process based simulation: a powerful tool for demand analysis of business process reengineering and information system implementation
+Transitioning students from simulation mechanics to simulation as a process improvement tool: a multimedia case study approach
+Impact of process simulation on software practice: an initial report
+Analysis of selected industrial decision rules in a dynamic environment by means of computer simulation
+WATIS2: Design and Application of an Environment Simulation System for Test Improvement of Control Software for Automatic Logistic Systems
+Emulation models for testing of process control systems
+Quality control of an industrial unit production using qualitative methods
+Report on ProSim'04: the 5th international workshop on software process simulation and modeling
+Modeling and Simulation of a Complex Industrial Process
+How to test your models more effectively: applying agile and automated techniques to simulation testing
+Software products for risk assessment
+Industrial enterprises business processes simulation with BPsim.MAS
+
+Average precision: 0.5957927059319796
+
+BM25
+
+Recall, Precision
+0.007246376811594203, 1.0
+0.10144927536231885, 0.7
+0.2028985507246377, 0.7
+0.30434782608695654, 0.65625
+0.4057971014492754, 0.6746987951807228
+0.5, 0.6448598130841121
+0.6014492753623188, 0.6148148148148148
+0.7028985507246377, 0.5300546448087432
+0.8043478260869565, 0.5068493150684932
+0.9057971014492754, 0.352112676056338
+1.0, 0.05426661423515533
+
+Top documents:
+
+Application of simulation for manufacturing processes improvements: using simulation techniques for continuous process verification in industrial system development
+Iterative use of simulation and scheduling methodologies to improve productivity
+Parameter validity control in process control systems
+Manufacturing simulation: a new tool for robotics, FMS and industrial process design
+Manufacturing Simulation: A New Tool for Robotics, FMS, and Industrial Process Design
+A new concept of the industrial process simulation-cybernetic approach using distributed access control schemes
+The simulation engine: a platform for developing industrial process knowledge-based discrete event simulations
+The new design: the changing role of industrial engineers in the design process through the use of simulation
+Simulation based scheduling system in a semiconductor backend facility
+Development environment of expert system to operate in real time with industrial automation supervisory system
+Transitioning students from simulation mechanics to simulation as a process improvement tool: a multimedia case study approach
+Modeling and Simulation of a Complex Industrial Process
+A system simulation framework
+Design and simulation of a fuzzy substrate feeding controller for an industrial scale fed-batch baker yeast fermentor
+Quantitative simulation approach to ameliorate deadlock concerns in automotive manufacture
+Business process based simulation: a powerful tool for demand analysis of business process reengineering and information system implementation
+Researches on Digital Industrial Design System and its Application on Air Nailer Design Process
+Impact of process simulation on software practice: an initial report
+Computer-supported competence management: Evolution of industrial processes as life cycles of organizations
+Computer simulation of a parametric optimization problem for an industrial process
+Quality control of an industrial unit production using qualitative methods
+Report on ProSim'04: the 5th international workshop on software process simulation and modeling
+Emulation models for testing of process control systems
+How to test your models more effectively: applying agile and automated techniques to simulation testing
+WATIS2: Design and Application of an Environment Simulation System for Test Improvement of Control Software for Automatic Logistic Systems
+Design and implementation of efficient intelligent robotic gripper
+Industrial enterprises business processes simulation with BPsim.MAS
+Modeling and simulation of a column industrial robot type used in mounting processes
+Plenary lecture 3: simulation, artificial intelligence and virtual systems applications in industrial processes education
+Data mining and simulation processes as useful tools for industrial processes
+
+Average precision: 0.5849006066589436
+-------------------------------------------------------------------------------------
+
+Query: 
+manufacturing process models
+
+VSM
+
+Recall, Precision
+0.007246376811594203, 1.0
+0.10144927536231885, 0.8235294117647058
+0.2028985507246377, 0.875
+0.30434782608695654, 0.8571428571428571
+0.4057971014492754, 0.7671232876712328
+0.5, 0.518796992481203
+0.6014492753623188, 0.332
+0.7028985507246377, 0.19675456389452334
+0.8043478260869565, 0.14140127388535031
+0.9057971014492754, 0.09652509652509653
+1.0, 0.05388520109332292
+
+Top documents:
+
+Development and application of equipment-specific process models for semiconductor manufacturing
+Research on Dynamic Reconfigurable Manufacturing Process Model Based on Model Driven Architecture
+Manufacturing planning and predictive process model integration using software agents
+Affordable Design - A Methodology to Implement Process-Based Manufacturing Cost Models Into the Traditional Performance-Focused Multidisciplinary Design Optimization
+A Standardised Data Model for Process and Flow Management: ISO 15531-43 --A Step Towards CE in Manufacturing --
+Manufacturing modeling methods: an approach and interface for building generic manufacturing kanban-systems models
+Bringing Manufacturing into Design via Process-Dependent SPICE Models
+A process-driven computing model for reconfigurable semiconductor manufacturing
+Validation and verification of the simulation model of a photolithography process in semiconductor manufacturing
+CIMOSA model creation and execution for a casting process and a manufacturing cell
+Manufacturing simulation: a new tool for robotics, FMS and industrial process design
+Manufacturing Simulation: A New Tool for Robotics, FMS, and Industrial Process Design
+Evaluating and Selecting Flexible Manufacturing Systems by Integrating Data Envelopment Analysis and Analytical Hierarchy Process Model
+Chip speed prediction model for optimization of semiconductor manufacturing process using neural networks and statistical methods
+Handling constraints for manufacturing process optimisation using genetic algorithms
+Process/Product Integrated Planning in a Manufacturing System: A Linear Programming Model
+Manufacturing process control through integration of neural networks and fuzzy model
+Piecewise deterministic Markov process model for flexible manufacturing systems with preventive maintenance
+Time sequence ordering extensions to the Entity-Relationship model and their application to the automated manufacturing process
+A model-based engineering process for increasing productivity in discrete manufacturing
+Research on Quality Supervision Model for Cooperative Manufacturing Preparing Process in Virtual Enterprise
+Interoperating simulations of automatic material handling systems and manufacturing processes
+Neutral template libraries for efficient distributed simulation within a manufacturing system engineering platform
+Casting Back Errant Stage in Multi-stage Manufacturing Process
+Pattern recognition of manufacturing process signals using Gaussian mixture models-based recognition systems
+An intelligent modeling and analysis method of manufacturing process using the first-order predicate logic
+Model for Silicon Piece Manufacturing Process Planning Based on Polychromatic Sets Theory
+Using ANNs to model hot extrusion manufacturing process
+HPNS: a hybrid process net simulation environment executing online dynamic models of industrial manufacturing systems
+HPNS: a hybrid process net simulation environment executing online dynamic models of industrial manufacturing systems
+
+Average precision: 0.5147416985871174
+
+BM25
+
+Recall, Precision
+0.0, 0.0
+0.10144927536231885, 0.8235294117647058
+0.2028985507246377, 0.8484848484848485
+0.30434782608695654, 0.8936170212765957
+0.4057971014492754, 0.7272727272727273
+0.5, 0.5798319327731093
+0.6014492753623188, 0.31679389312977096
+0.7028985507246377, 0.191699604743083
+0.8043478260869565, 0.14140127388535031
+0.9057971014492754, 0.09652509652509653
+1.0, 0.05388520109332292
+
+Top documents:
+
+Affordable Design - A Methodology to Implement Process-Based Manufacturing Cost Models Into the Traditional Performance-Focused Multidisciplinary Design Optimization
+Manufacturing planning and predictive process model integration using software agents
+Research on Dynamic Reconfigurable Manufacturing Process Model Based on Model Driven Architecture
+Bringing Manufacturing into Design via Process-Dependent SPICE Models
+Development and application of equipment-specific process models for semiconductor manufacturing
+A Standardised Data Model for Process and Flow Management: ISO 15531-43 --A Step Towards CE in Manufacturing --
+A process-driven computing model for reconfigurable semiconductor manufacturing
+Chip speed prediction model for optimization of semiconductor manufacturing process using neural networks and statistical methods
+Evaluating and Selecting Flexible Manufacturing Systems by Integrating Data Envelopment Analysis and Analytical Hierarchy Process Model
+Manufacturing modeling methods: an approach and interface for building generic manufacturing kanban-systems models
+A model-based engineering process for increasing productivity in discrete manufacturing
+Neutral template libraries for efficient distributed simulation within a manufacturing system engineering platform
+Handling constraints for manufacturing process optimisation using genetic algorithms
+Research on Quality Supervision Model for Cooperative Manufacturing Preparing Process in Virtual Enterprise
+Pattern recognition of manufacturing process signals using Gaussian mixture models-based recognition systems
+An intelligent modeling and analysis method of manufacturing process using the first-order predicate logic
+Interoperating simulations of automatic material handling systems and manufacturing processes
+The Use of the Manufacturing Sensitivity Model Forms to Comprehend Layout Manufacturing Robustness For Use During Device Design
+Constructing DEVS models based on experts' knowledge: application to STMicroelectronics' large scale manufacturing processes (Work-in-Progress)
+Casting Back Errant Stage in Multi-stage Manufacturing Process
+Model for Silicon Piece Manufacturing Process Planning Based on Polychromatic Sets Theory
+HPNS: a hybrid process net simulation environment executing online dynamic models of industrial manufacturing systems
+HPNS: a hybrid process net simulation environment executing online dynamic models of industrial manufacturing systems
+HPNS: a hybrid process net simulation environment executing online dynamic models of industrial manufacturing systems
+A QoS-based GFAM Scheduling Approach for Manufacturing Grid
+Using ANNs to model hot extrusion manufacturing process
+The Research and Application on Process Planning Knowledge Discovery Technology Based on Knowledge Model in Discrete Manufacturing Enterprise
+Master Model-Driven Process and Fixture Collaborative Design for Aeroengine Blade Manufacturing
+Improving cost model development process using advanced data generation and data analysis techniques
+A CAD-oriented cloth simulation system with stable and efficient ODE solution
+
+Average precision: 0.4248219100862372
+-------------------------------------------------------------------------------------
