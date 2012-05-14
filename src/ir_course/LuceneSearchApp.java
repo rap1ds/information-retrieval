@@ -6,8 +6,6 @@
 package ir_course;
 
 import java.io.IOException;
-import java.util.Collections;
-import java.util.LinkedList;
 import java.util.List;
 
 import org.apache.lucene.analysis.standard.StandardAnalyzer;
@@ -15,17 +13,8 @@ import org.apache.lucene.document.Document;
 import org.apache.lucene.document.Field;
 import org.apache.lucene.document.FieldType;
 import org.apache.lucene.index.CorruptIndexException;
-import org.apache.lucene.index.IndexReader;
 import org.apache.lucene.index.IndexWriter;
 import org.apache.lucene.index.IndexWriterConfig;
-import org.apache.lucene.index.Term;
-import org.apache.lucene.search.BooleanClause;
-import org.apache.lucene.search.BooleanQuery;
-import org.apache.lucene.search.IndexSearcher;
-import org.apache.lucene.search.MatchAllDocsQuery;
-import org.apache.lucene.search.ScoreDoc;
-import org.apache.lucene.search.TermQuery;
-import org.apache.lucene.search.similarities.DefaultSimilarityProvider;
 import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.LockObtainFailedException;
 import org.apache.lucene.store.RAMDirectory;
@@ -39,7 +28,6 @@ public class LuceneSearchApp {
 			"computer and physical model simulation",
 			"industrial process simulation", "manufacturing process models" };
 
-	private int documentCount;
 	private int relevantDocumentCount;
 
 	private StandardAnalyzer analyzer;
@@ -79,7 +67,7 @@ public class LuceneSearchApp {
 
 		// String cast for relevance. Empty = False, 1 = True
 		String relevance = "";
-		if (boolean_relevance && xmlDoc.getSearchTaskNumber() == 8)
+		if (boolean_relevance && xmlDoc.getSearchTaskNumber() == OUR_SEARCH_TASK)
 			relevance = "1";
 
 		// Index all the searchable content into one field and the title to
@@ -89,45 +77,7 @@ public class LuceneSearchApp {
 				+ xmlDoc.getAbstractText(), textFieldType));
 		doc.add(new Field("relevance", relevance, textFieldType));
 
-		// TODO: Is indexing relevance, query etc necessary for calculating
-		// precicion / recall?
-
 		w.addDocument(doc);
-	}
-
-	public SearchResults VSMsearch(String query, int limit)
-			throws CorruptIndexException, IOException {
-		SearchResults results = new SearchResults();
-
-		IndexReader reader = IndexReader.open(index);
-
-		IndexSearcher searcher = new IndexSearcher(reader);
-		// Ilmeisesti Defaultprovider toteuttaa VSM- similarityn...
-		DefaultSimilarityProvider provider = new DefaultSimilarityProvider();
-		searcher.setSimilarityProvider(provider);
-
-		BooleanQuery bq = new BooleanQuery();
-		String[] words = query.split(" ");
-		for (String word : words) {
-			Term t = new Term("content", word);
-			TermQuery tq = new TermQuery(t);
-			bq.add(tq, BooleanClause.Occur.SHOULD);
-		}
-		bq.add(new MatchAllDocsQuery(), BooleanClause.Occur.SHOULD);
-
-		ScoreDoc[] hits = searcher.search(bq, limit).scoreDocs;
-
-		for (ScoreDoc hit : hits) {
-			Document doc = searcher.doc(hit.doc);
-			results.list.add(doc.get("title"));
-
-			// if not empty => relevant
-			if (!doc.get("relevance").isEmpty()) {
-				results.relevantResults++;
-			}
-		}
-
-		return results;
 	}
 
 	public double getAverage(List<Double> precisions) {
@@ -135,16 +85,6 @@ public class LuceneSearchApp {
 		for (double precision : precisions)
 			sum += precision;
 		return sum / precisions.size();
-	}
-
-	public void printResults(List<String> results) {
-		if (results.size() > 0) {
-			Collections.sort(results);
-			for (int i = 0; i < results.size(); i++)
-				System.out.println(" " + (i + 1) + ". " + results.get(i));
-		} else {
-			System.out.println(" no results");
-		}
 	}
 
 	/**
@@ -165,7 +105,6 @@ public class LuceneSearchApp {
 		}
 
 		// Save the values
-		this.documentCount = documentCount;
 		this.relevantDocumentCount = relevantDocumentCount;
 	}
 
@@ -173,30 +112,20 @@ public class LuceneSearchApp {
 			LockObtainFailedException, IOException {
 		if (args.length > 0) {
 			LuceneSearchApp engine = new LuceneSearchApp();
-			BM25Searcher searcher2 = new BM25Searcher();
+			
 			// Read and index XML collection
 			DocumentCollectionParser parser = new DocumentCollectionParser();
 			parser.parse(args[0]);
-			List<DocumentInCollection> originalDocs = parser.getDocuments();
-
-			// Why are we adding only documents relevant to our search task.
-			// Doing this gives us wrong presicion/recall in my opinion-
-
-			List<DocumentInCollection> docs = new LinkedList<DocumentInCollection>();
-			for (DocumentInCollection doc : originalDocs) {
-				if (doc.getSearchTaskNumber() == 8)
-					docs.add(doc);
-				;
-			}
+			List<DocumentInCollection> docs = parser.getDocuments();
 
 			engine.analyzeDocumentCollection(docs);
 			engine.index(docs);
+			
+			// Create searchers
+			BM25Searcher bm25Searcher = new BM25Searcher(engine.index);
+			VSMSearcher vsmSearcher = new VSMSearcher(engine.index);
 
-			// TODO: search and rank with VSM and BM25
 			for (String query : engine.queries) {
-				System.out.println();
-				System.out.println(query);
-
 				int docsSize = docs.size();
 				
 				PrecisionRecallCalculator vsmPrecisionRecall = new PrecisionRecallCalculator(engine.relevantDocumentCount);
@@ -207,44 +136,46 @@ public class LuceneSearchApp {
 				// Inner loop is for calculating precision and recall for
 				// different limit counts.
 				for(int limit = 1; limit < docsSize; limit++) {
-					vsmResults = engine.VSMsearch(query, limit);
-					bm25Results = searcher2.BM25search(engine.index, query, limit);
+					vsmResults = vsmSearcher.VSMsearch(query, limit);
+					bm25Results = bm25Searcher.BM25search(query, limit);
 					
 					vsmPrecisionRecall.calculate(vsmResults, limit);
 					bm25PrecisionRecall.calculate(bm25Results, limit);
 				}
 				
 				// Print results
-				System.out.println("VSM Results");
 				
-				if(vsmResults != null) {
-					System.out.println("HITS " + vsmResults.list.size());
+				System.out.println("\nQuery: ");
+				System.out.println(query);
+				
+				System.out.println("\nVSM\n");
+				
+				vsmPrecisionRecall.printPrecisionRecallSteps();
+				
+				System.out.println("\nTop documents:\n");
+				
+				for(int i = 0; i < 30; i++) {
+					System.out.println(vsmResults.list.get(i));
 				}
 				
-				System.out.println("LIST SIZE: " + vsmPrecisionRecall.precisions.size()); // Pitaisi
-																		// olla
-																		// 11
-				System.out.println("INTERPOLATION VALUE:"
-						+ engine.getAverage(vsmPrecisionRecall.precisions));
+				System.out.println("\nAverage precision: "
+				 		+ engine.getAverage(vsmPrecisionRecall.precisions));
 				
-				System.out.println();
+				System.out.println("\nBM25\n");
 				
-				System.out.println("BM25 Results");
+				bm25PrecisionRecall.printPrecisionRecallSteps();
 				
-				if(vsmResults != null) {
-					System.out.println("HITS " + bm25Results.list.size());
+				System.out.println("\nTop documents:\n");
+				
+				for(int i = 0; i < 30; i++) {
+					System.out.println(bm25Results.list.get(i));
 				}
 				
-				System.out.println("LIST SIZE: " + bm25PrecisionRecall.precisions.size()); // Pitaisi
-																		// olla
-																		// 11
-				System.out.println("INTERPOLATION VALUE:"
+				System.out.println("\nAverage precision: "
 						+ engine.getAverage(bm25PrecisionRecall.precisions));
 				
 				System.out.println("-------------------------------------------------------------------------------------");
 			}
-
-			// TODO: evaluate & compare
 		} else
 			System.out
 					.println("ERROR: the path of a XML Feed file has to be passed "
