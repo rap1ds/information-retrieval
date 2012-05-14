@@ -80,13 +80,6 @@ public class LuceneSearchApp {
 		w.addDocument(doc);
 	}
 
-	public double getAverage(List<Double> precisions) {
-		double sum = 0.0;
-		for (double precision : precisions)
-			sum += precision;
-		return sum / precisions.size();
-	}
-
 	/**
 	 * Counts the number of documents and number of relevant document
 	 */
@@ -125,11 +118,16 @@ public class LuceneSearchApp {
 			BM25Searcher bm25Searcher = new BM25Searcher(engine.index);
 			VSMSearcher vsmSearcher = new VSMSearcher(engine.index);
 
+			int queryNumber = 0;
+			
 			for (String query : engine.queries) {
 				int docsSize = docs.size();
 				
-				PrecisionRecallCalculator vsmPrecisionRecall = new PrecisionRecallCalculator(engine.relevantDocumentCount);
-				PrecisionRecallCalculator bm25PrecisionRecall = new PrecisionRecallCalculator(engine.relevantDocumentCount);
+				String name = "q" + queryNumber + " " + query;
+				name = name.replace(" ", "_");
+				
+				PrecisionRecallCalculator vsmPrecisionRecall = new PrecisionRecallCalculator("vsm_" + name, engine.relevantDocumentCount);
+				PrecisionRecallCalculator bm25PrecisionRecall = new PrecisionRecallCalculator("bm25_" + name, engine.relevantDocumentCount);
 				SearchResults vsmResults = null;
 				SearchResults bm25Results = null;
 				
@@ -143,14 +141,26 @@ public class LuceneSearchApp {
 					bm25PrecisionRecall.calculate(bm25Results, limit);
 				}
 				
-				// Print results
+				vsmPrecisionRecall.calculate11pointInterpolated();
+				bm25PrecisionRecall.calculate11pointInterpolated();
+				
+				// Print results (to file)
+				// Uncomment if you want to write these results to file
+				/*
+				vsmPrecisionRecall.printAllResults();
+				bm25PrecisionRecall.printAllResults();
+				vsmPrecisionRecall.printInterpolatedResults();
+				bm25PrecisionRecall.printInterpolatedResults();
+				*/
+				
+				// Print results (to console)
 				
 				System.out.println("\nQuery: ");
 				System.out.println(query);
 				
 				System.out.println("\nVSM\n");
 				
-				vsmPrecisionRecall.printPrecisionRecallSteps();
+				vsmPrecisionRecall.print11pointInterpolatedAverage();
 				
 				System.out.println("\nTop documents:\n");
 				
@@ -158,12 +168,9 @@ public class LuceneSearchApp {
 					System.out.println(vsmResults.list.get(i));
 				}
 				
-				System.out.println("\nAverage precision: "
-				 		+ engine.getAverage(vsmPrecisionRecall.precisions));
-				
 				System.out.println("\nBM25\n");
 				
-				bm25PrecisionRecall.printPrecisionRecallSteps();
+				bm25PrecisionRecall.print11pointInterpolatedAverage();
 				
 				System.out.println("\nTop documents:\n");
 				
@@ -171,10 +178,9 @@ public class LuceneSearchApp {
 					System.out.println(bm25Results.list.get(i));
 				}
 				
-				System.out.println("\nAverage precision: "
-						+ engine.getAverage(bm25PrecisionRecall.precisions));
-				
 				System.out.println("-------------------------------------------------------------------------------------");
+
+				queryNumber++;
 			}
 		} else
 			System.out
