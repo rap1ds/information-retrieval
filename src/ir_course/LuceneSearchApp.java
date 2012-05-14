@@ -22,6 +22,7 @@ import org.apache.lucene.index.Term;
 import org.apache.lucene.search.BooleanClause;
 import org.apache.lucene.search.BooleanQuery;
 import org.apache.lucene.search.IndexSearcher;
+import org.apache.lucene.search.MatchAllDocsQuery;
 import org.apache.lucene.search.ScoreDoc;
 import org.apache.lucene.search.TermQuery;
 import org.apache.lucene.search.similarities.DefaultSimilarityProvider;
@@ -112,6 +113,7 @@ public class LuceneSearchApp {
 			TermQuery tq = new TermQuery(t);
 			bq.add(tq, BooleanClause.Occur.SHOULD);
 		}
+		bq.add(new MatchAllDocsQuery(), BooleanClause.Occur.SHOULD);
 
 		ScoreDoc[] hits = searcher.search(bq, limit).scoreDocs;
 
