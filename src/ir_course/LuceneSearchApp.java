@@ -6,7 +6,6 @@
 package ir_course;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
@@ -95,9 +94,9 @@ public class LuceneSearchApp {
 		w.addDocument(doc);
 	}
 
-	public VSMResults VSMsearch(String query, int limit)
+	public SearchResults VSMsearch(String query, int limit)
 			throws CorruptIndexException, IOException {
-		VSMResults results = new VSMResults();
+		SearchResults results = new SearchResults();
 
 		IndexReader reader = IndexReader.open(index);
 
@@ -196,51 +195,51 @@ public class LuceneSearchApp {
 				System.out.println();
 				System.out.println(query);
 
-				List<Double> precisions = new ArrayList<Double>();
-
-				int hitLimit = docs.size();
-				double count = 0;
-
+				int docsSize = docs.size();
+				
+				PrecisionRecallCalculator vsmPrecisionRecall = new PrecisionRecallCalculator(engine.relevantDocumentCount);
+				PrecisionRecallCalculator bm25PrecisionRecall = new PrecisionRecallCalculator(engine.relevantDocumentCount);
+				SearchResults vsmResults = null;
+				SearchResults bm25Results = null;
+				
 				// Inner loop is for calculating precision and recall for
 				// different limit counts.
-				for (int i = 1; i < hitLimit; i++) {
-					VSMResults vsmResults = engine.VSMsearch(query, i);
-					// List<String> BM25results =
-					// searcher2.BM25search(engine.index, query, hitLimit);
-
-					// TODO: print results
-
-					// Jokainen query pitais looppaa hitLimit:ia kasvattamalla
-					// niin kunnes ollaan saatu recall-arvoksi 1.0
-					// aina kun recall saa mahdollisimman lahelle arvon
-					// 0.0,0.1,0.2.. 1.0 => precisions.add
-					double precision_vsm = ((double) vsmResults.relevantResults)
-							/ ((double) i);
-					double recall_vsm = ((double) vsmResults.relevantResults)
-							/ ((double) engine.documentCount);
-					if (recall_vsm > count / 10 - 0.01
-							&& recall_vsm < count / 10 + 0.01 && count < 11) {
-						precisions.add(precision_vsm);
-						// System.out.println("P: " + precision_vsm);
-						// System.out.println("R : " + recall_vsm);
-						count++;
-					}
-
-					// System.out.println("HITS: " + VSMresults.size());
-
-					// engine.printResults(VSMresults);
-					// System.out.println("-------------------------------------------------------------------------------------");
-					// engine.printResults(BM25results);
-
-					// HITS SHOULD BE 200
-					if (i == hitLimit - 1)
-						System.out.println("HITS " + vsmResults.list.size());
+				for(int limit = 1; limit < docsSize; limit++) {
+					vsmResults = engine.VSMsearch(query, limit);
+					bm25Results = searcher2.BM25search(engine.index, query, limit);
+					
+					vsmPrecisionRecall.calculate(vsmResults, limit);
+					bm25PrecisionRecall.calculate(bm25Results, limit);
 				}
-				System.out.println("LIST SIZE: " + precisions.size()); // Pitaisi
+				
+				// Print results
+				System.out.println("VSM Results");
+				
+				if(vsmResults != null) {
+					System.out.println("HITS " + vsmResults.list.size());
+				}
+				
+				System.out.println("LIST SIZE: " + vsmPrecisionRecall.precisions.size()); // Pitaisi
 																		// olla
 																		// 11
 				System.out.println("INTERPOLATION VALUE:"
-						+ engine.getAverage(precisions));
+						+ engine.getAverage(vsmPrecisionRecall.precisions));
+				
+				System.out.println();
+				
+				System.out.println("BM25 Results");
+				
+				if(vsmResults != null) {
+					System.out.println("HITS " + bm25Results.list.size());
+				}
+				
+				System.out.println("LIST SIZE: " + bm25PrecisionRecall.precisions.size()); // Pitaisi
+																		// olla
+																		// 11
+				System.out.println("INTERPOLATION VALUE:"
+						+ engine.getAverage(bm25PrecisionRecall.precisions));
+				
+				System.out.println("-------------------------------------------------------------------------------------");
 			}
 
 			// TODO: evaluate & compare
