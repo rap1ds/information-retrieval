@@ -37,10 +37,13 @@ public class PrecisionRecallCalculator {
 		double precision = tp / (tp + fp);
 		double recall = tp / (tp + fn); 
 		
-		if (recall > recallStep / 10 - 0.01 
-				&& recall < recallStep / 10 + 0.01
-				&& recallStep < 11) {
+		// if (recall > recallStep / 10 - 0.01 
+		//		&& recall < recallStep / 10 + 0.01
+		//		&& recallStep < 11) {
+		
+		if(recall >= recallStep / 10 && recallStep < 11) {
 			
+		
 			precisions.add(precision);
 			stepResults.add(new PrecisionRecall(precision, recall));
 			
@@ -53,7 +56,7 @@ public class PrecisionRecallCalculator {
 		for(int step = 0; step < this.stepResults.size(); step++) {
 			PrecisionRecall stepResult = this.stepResults.get(step);
 			
-			System.out.println(((double)step / (double)10) + ", " + stepResult.precision);
+			System.out.println(stepResult.recall + ", " + stepResult.precision);
 		}
 	}
 }
