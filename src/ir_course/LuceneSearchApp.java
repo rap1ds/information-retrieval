@@ -122,6 +122,10 @@ public class LuceneSearchApp {
 
 			int queryNumber = 0;
 			
+			// Save the Average Precision and calculate the Mean Average Precision later
+			double vsmAveragePrecisions = 0;
+			double bm25AveragePrecisions = 0;
+			
 			// Save the 11-point results and calculate average precision later
 			List<List<PrecisionRecall>> vsm11points = new ArrayList<List<PrecisionRecall>>();
 			List<List<PrecisionRecall>> bm2511points = new ArrayList<List<PrecisionRecall>>();
@@ -146,6 +150,12 @@ public class LuceneSearchApp {
 					vsmPrecisionRecall.calculate(vsmResults, limit);
 					bm25PrecisionRecall.calculate(bm25Results, limit);
 				}
+				
+				vsmPrecisionRecall.calculateAveragePrecision();
+				bm25PrecisionRecall.calculateAveragePrecision();
+				
+				vsmAveragePrecisions += vsmPrecisionRecall.avgPrecision;
+				bm25AveragePrecisions += bm25PrecisionRecall.avgPrecision;
 				
 				vsmPrecisionRecall.calculate11point();
 				bm25PrecisionRecall.calculate11point();
@@ -191,13 +201,23 @@ public class LuceneSearchApp {
 
 				queryNumber++;
 			}
+			
+			int queries = engine.queries.length;
+			
+			// Calculate Mean Average Precision (MAP)
+			double vsmMeanAveragePrecision = vsmAveragePrecisions / (double) queries;
+			double bm25MeanAveragePrecision = bm25AveragePrecisions / (double) queries;
+			
+			System.out.println("\nMean Average Precisions:\n");
+			
+			System.out.println("VSM: " + vsmMeanAveragePrecision);
+			System.out.println("BM25: " + bm25MeanAveragePrecision);
 
 			List<PrecisionRecall> vsmElevenPointAvgPrecision = new ArrayList<PrecisionRecall>();
 			List<PrecisionRecall> bm25ElevenPointAvgPrecision = new ArrayList<PrecisionRecall>();
 			
 			// Calculate arithmetic mean
 			for(int recallStep = 0; recallStep < 11; recallStep++) {
-				int queries = engine.queries.length;
 				
 				double vsmPrecisionAvg = 0;
 				double bm25PrecisionAvg = 0;

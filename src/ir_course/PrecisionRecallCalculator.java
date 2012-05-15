@@ -12,8 +12,12 @@ public class PrecisionRecallCalculator {
 	public List<PrecisionRecall> allResults;
 	public List<PrecisionRecall> steps11Results;
 	public List<PrecisionRecall> interpolatedResults;
+	public List<PrecisionRecall> avgPrecisionResults;
 
 	public int relevantDocumentCount;
+	private int relevantDocumentsFound;
+	
+	public double avgPrecision;
 
 	String name;
 
@@ -21,6 +25,8 @@ public class PrecisionRecallCalculator {
 		this.name = name;
 		this.relevantDocumentCount = relevantDocumentCount;
 		this.allResults = new ArrayList<PrecisionRecall>();
+		this.avgPrecisionResults = new ArrayList<PrecisionRecall>();
+		this.relevantDocumentsFound = 0;
 	}
 
 	public void calculate(SearchResults results, int hitLimit) {
@@ -33,18 +39,32 @@ public class PrecisionRecallCalculator {
 		double precision = tp / (tp + fp);
 		double recall = tp / (tp + fn);
 
-		this.allResults.add(new PrecisionRecall(precision, recall));
+		PrecisionRecall precisionRecall = new PrecisionRecall(precision, recall);
+		
+		this.allResults.add(precisionRecall);
 
-		/*
-		 * 
-		 * if(recall >= recallStep / 10 && recallStep < 11) {
-		 * 
-		 * 
-		 * precisions.add(precision); stepResults.add(new
-		 * PrecisionRecall(precision, recall));
-		 * 
-		 * recallStep++; }
-		 */
+		// Save value if new relevant document was received
+		if(results.relevantResults > relevantDocumentsFound) {
+			// Found a new relevant document!
+			this.avgPrecisionResults.add(precisionRecall);
+			relevantDocumentsFound++;
+		}
+	}
+	
+	public void calculateAveragePrecision() {
+		System.out.println("\nCalculating average precision from " + this.avgPrecisionResults.size() + " results");
+		
+		double avgPrecision = 0;
+		
+		for(PrecisionRecall precisionRecall : this.avgPrecisionResults) {
+			avgPrecision += precisionRecall.precision;
+		}
+		
+		avgPrecision /= (double) this.avgPrecisionResults.size();
+		
+		System.out.println("Average Precision: " + avgPrecision);
+		
+		this.avgPrecision = avgPrecision;
 	}
 
 	/**

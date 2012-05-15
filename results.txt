@@ -1,4 +1,10 @@
 
+Calculating average precision from 138 results
+Average Precision: 0.5194771028477577
+
+Calculating average precision from 138 results
+Average Precision: 0.5149863694265632
+
 Query: 
 simulation industrial environment
 
@@ -98,6 +104,12 @@ Manufacturing simulation: a new tool for robotics, FMS and industrial process de
 Manufacturing Simulation: A New Tool for Robotics, FMS, and Industrial Process Design
 Design and simulation of a fuzzy substrate feeding controller for an industrial scale fed-batch baker yeast fermentor
 -------------------------------------------------------------------------------------
+
+Calculating average precision from 138 results
+Average Precision: 0.4015723906990226
+
+Calculating average precision from 138 results
+Average Precision: 0.3551274177528586
 
 Query: 
 computer and physical model simulation
@@ -199,6 +211,12 @@ Challenges of biological realism and validation in simulation-based medical educ
 Physical simulation for animation and visual effects: parallelization and characterization for chip multiprocessors
 -------------------------------------------------------------------------------------
 
+Calculating average precision from 138 results
+Average Precision: 0.5955496927992819
+
+Calculating average precision from 138 results
+Average Precision: 0.5514867193838753
+
 Query: 
 industrial process simulation
 
@@ -299,6 +317,12 @@ Plenary lecture 3: simulation, artificial intelligence and virtual systems appli
 Data mining and simulation processes as useful tools for industrial processes
 -------------------------------------------------------------------------------------
 
+Calculating average precision from 138 results
+Average Precision: 0.5105267974837411
+
+Calculating average precision from 138 results
+Average Precision: 0.4907218967069917
+
 Query: 
 manufacturing process models
 
@@ -398,6 +422,11 @@ Master Model-Driven Process and Fixture Collaborative Design for Aeroengine Blad
 Improving cost model development process using advanced data generation and data analysis techniques
 A CAD-oriented cloth simulation system with stable and efficient ODE solution
 -------------------------------------------------------------------------------------
+
+Mean Average Precisions:
+
+VSM: 0.5067814959574508
+BM25: 0.4780806008175722
 
 VSM Eleven-point average precision:
 
