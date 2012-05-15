@@ -71,29 +71,32 @@ public class PrecisionRecallCalculator {
 		}
 	}
 
-	private void do11pointInterpolatedAverage() {
+	private void do11pointAverage(List<PrecisionRecall> results) {
 		this.steps11Results = new ArrayList<PrecisionRecall>();
 
 		double recallStep = 0;
 
-		for (int i = 0; i < interpolatedResults.size(); i++) {
-			PrecisionRecall interpolatedPrecisionRecall = interpolatedResults.get(i);
+		for (int i = 0; i < results.size(); i++) {
+			PrecisionRecall precisionRecall = results.get(i);
 
-			if (interpolatedPrecisionRecall.recall >= recallStep
+			if (precisionRecall.recall >= recallStep
 					&& recallStep <= 1) {
-				this.steps11Results.add(interpolatedPrecisionRecall);
+				this.steps11Results.add(precisionRecall);
 				recallStep += 0.1;
 			}
 		}
 	}
 
-	public void calculate11pointInterpolated() {
+	public void calculate11point() {
 
 		// Interpolate
-		this.interpolate();
+		/*
+		 * Not needed, the assignment required non-interpolated
+		 */
+		// this.interpolate();
 
 		// 11-point
-		this.do11pointInterpolatedAverage();
+		this.do11pointAverage(this.allResults);
 	}
 
 	public void printAllResults() throws IOException {
@@ -124,7 +127,7 @@ public class PrecisionRecallCalculator {
 		this.writeToFile(sb, this.name + "_interpolated.txt");
 	}
 
-	public void print11pointInterpolatedAverage() {
+	public void print11pointAverage() {
 		System.out.println("Recall, Precision");
 		for (int step = 0; step < this.steps11Results.size(); step++) {
 			PrecisionRecall stepResult = this.steps11Results.get(step);

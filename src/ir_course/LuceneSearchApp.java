@@ -147,8 +147,8 @@ public class LuceneSearchApp {
 					bm25PrecisionRecall.calculate(bm25Results, limit);
 				}
 				
-				vsmPrecisionRecall.calculate11pointInterpolated();
-				bm25PrecisionRecall.calculate11pointInterpolated();
+				vsmPrecisionRecall.calculate11point();
+				bm25PrecisionRecall.calculate11point();
 				
 				vsm11points.add(vsmPrecisionRecall.steps11Results);
 				bm2511points.add(bm25PrecisionRecall.steps11Results);
@@ -158,8 +158,8 @@ public class LuceneSearchApp {
 				/*
 				vsmPrecisionRecall.printAllResults();
 				bm25PrecisionRecall.printAllResults();
-				vsmPrecisionRecall.printInterpolatedResults();
-				bm25PrecisionRecall.printInterpolatedResults();
+				// Not needed, the assignment required non-interpolated vsmPrecisionRecall.printInterpolatedResults();
+				// Not needed, the assignment required non-interpolated bm25PrecisionRecall.printInterpolatedResults();
 				*/
 				
 				// Print results (to console)
@@ -169,7 +169,7 @@ public class LuceneSearchApp {
 				
 				System.out.println("\nVSM\n");
 				
-				vsmPrecisionRecall.print11pointInterpolatedAverage();
+				vsmPrecisionRecall.print11pointAverage();
 				
 				System.out.println("\nTop documents:\n");
 				
@@ -179,7 +179,7 @@ public class LuceneSearchApp {
 				
 				System.out.println("\nBM25\n");
 				
-				bm25PrecisionRecall.print11pointInterpolatedAverage();
+				bm25PrecisionRecall.print11pointAverage();
 				
 				System.out.println("\nTop documents:\n");
 				
@@ -192,8 +192,8 @@ public class LuceneSearchApp {
 				queryNumber++;
 			}
 
-			List<PrecisionRecall> vsmElevenPointInterpolatedAvgPrecision = new ArrayList<PrecisionRecall>();
-			List<PrecisionRecall> bm25ElevenPointInterpolatedAvgPrecision = new ArrayList<PrecisionRecall>();
+			List<PrecisionRecall> vsmElevenPointAvgPrecision = new ArrayList<PrecisionRecall>();
+			List<PrecisionRecall> bm25ElevenPointAvgPrecision = new ArrayList<PrecisionRecall>();
 			
 			// Calculate arithmetic mean
 			for(int recallStep = 0; recallStep < 11; recallStep++) {
@@ -225,23 +225,23 @@ public class LuceneSearchApp {
 				bm25PrecisionAvg /= ((double) queries);
 				bm25RecallAvg /= ((double) queries);
 				
-				vsmElevenPointInterpolatedAvgPrecision.add(new PrecisionRecall(vsmPrecisionAvg, vsmRecallAvg));
-				bm25ElevenPointInterpolatedAvgPrecision.add(new PrecisionRecall(bm25PrecisionAvg, bm25RecallAvg));
+				vsmElevenPointAvgPrecision.add(new PrecisionRecall(vsmPrecisionAvg, vsmRecallAvg));
+				bm25ElevenPointAvgPrecision.add(new PrecisionRecall(bm25PrecisionAvg, bm25RecallAvg));
 				
 				// Debugging System.out.println("Step: " + recallStep + ", vsmPresicion: " + vsmPrecisionAvg + ", vsmRecall: " + vsmRecallAvg + ", bm25Precision: " + bm25PrecisionAvg + ", bm25Recall " + bm25RecallAvg);
 			}
 			
-			System.out.println("\nVSM Eleven-point interpolated average precision:\n");
+			System.out.println("\nVSM Eleven-point average precision:\n");
 			
 			System.out.println("Recall, Precision");
-			for(PrecisionRecall stepResult : vsmElevenPointInterpolatedAvgPrecision) {
+			for(PrecisionRecall stepResult : vsmElevenPointAvgPrecision) {
 				System.out.println(stepResult.recall + ", " + stepResult.precision);
 			}
 			
-			System.out.println("\nBM25 Eleven-point interpolated average precision:\n");
+			System.out.println("\nBM25 Eleven-point average precision:\n");
 			
 			System.out.println("Recall, Precision");
-			for(PrecisionRecall stepResult : bm25ElevenPointInterpolatedAvgPrecision) {
+			for(PrecisionRecall stepResult : bm25ElevenPointAvgPrecision) {
 				System.out.println(stepResult.recall + ", " + stepResult.precision);
 			}
 			

@@ -23,5 +23,4 @@ public class BM25Searcher extends Searcher {
 		
 		return this.search(query, limit);
 	}
-
 }
