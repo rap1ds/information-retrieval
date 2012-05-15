@@ -6,6 +6,7 @@
 package ir_course;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.lucene.analysis.standard.StandardAnalyzer;
@@ -26,7 +27,8 @@ public class LuceneSearchApp {
 	public int relevantsInDocument;
 	private final String[] queries = { "simulation industrial environment",
 			"computer and physical model simulation",
-			"industrial process simulation", "manufacturing process models" };
+			"industrial process simulation", 
+			"manufacturing process models" };
 
 	private int relevantDocumentCount;
 
@@ -120,6 +122,10 @@ public class LuceneSearchApp {
 
 			int queryNumber = 0;
 			
+			// Save the 11-point results and calculate average precision later
+			List<List<PrecisionRecall>> vsm11points = new ArrayList<List<PrecisionRecall>>();
+			List<List<PrecisionRecall>> bm2511points = new ArrayList<List<PrecisionRecall>>();
+			
 			for (String query : engine.queries) {
 				int docsSize = docs.size();
 				
@@ -143,6 +149,9 @@ public class LuceneSearchApp {
 				
 				vsmPrecisionRecall.calculate11pointInterpolated();
 				bm25PrecisionRecall.calculate11pointInterpolated();
+				
+				vsm11points.add(vsmPrecisionRecall.steps11Results);
+				bm2511points.add(vsmPrecisionRecall.steps11Results);
 				
 				// Print results (to file)
 				// Uncomment if you want to write these results to file
@@ -182,6 +191,60 @@ public class LuceneSearchApp {
 
 				queryNumber++;
 			}
+
+			List<PrecisionRecall> vsmElevenPointInterpolatedAvgPrecision = new ArrayList<PrecisionRecall>();
+			List<PrecisionRecall> bm25ElevenPointInterpolatedAvgPrecision = new ArrayList<PrecisionRecall>();
+			
+			// Calculate arithmetic mean
+			for(int recallStep = 0; recallStep < 11; recallStep++) {
+				int queries = engine.queries.length;
+				
+				double vsmPrecisionAvg = 0;
+				double bm25PrecisionAvg = 0;
+				
+				// Let's calculate recall avg, although they should be the same
+				double vsmRecallAvg = 0;
+				double bm25RecallAvg = 0;
+				
+				for(int query = 0; query < queries; query++) {
+					PrecisionRecall vsm = vsm11points.get(query).get(recallStep);
+					PrecisionRecall bm25 = bm2511points.get(query).get(recallStep);
+					
+					vsmPrecisionAvg += vsm.precision;
+					vsmRecallAvg += vsm.recall;
+					bm25PrecisionAvg += bm25.precision;
+					bm25RecallAvg += bm25.recall;
+					
+					// Debugging System.out.println("VSM recall: " + vsm.recall);
+					// Debugging System.out.println("BM25 recall: " + bm25.recall);
+					
+				}
+				
+				vsmPrecisionAvg /= ((double) queries);
+				vsmRecallAvg /= ((double) queries);
+				bm25PrecisionAvg /= ((double) queries);
+				bm25RecallAvg /= ((double) queries);
+				
+				vsmElevenPointInterpolatedAvgPrecision.add(new PrecisionRecall(vsmPrecisionAvg, vsmRecallAvg));
+				bm25ElevenPointInterpolatedAvgPrecision.add(new PrecisionRecall(bm25PrecisionAvg, bm25RecallAvg));
+				
+				// Debugging System.out.println("Step: " + recallStep + ", vsmPresicion: " + vsmPrecisionAvg + ", vsmRecall: " + vsmRecallAvg + ", bm25Precision: " + bm25PrecisionAvg + ", bm25Recall " + bm25RecallAvg);
+			}
+			
+			System.out.println("\nVSM Eleven-point interpolated average precision:\n");
+			
+			System.out.println("Recall, Precision");
+			for(PrecisionRecall stepResult : vsmElevenPointInterpolatedAvgPrecision) {
+				System.out.println(stepResult.recall + ", " + stepResult.precision);
+			}
+			
+			System.out.println("\nBM25 Eleven-point interpolated average precision:\n");
+			
+			System.out.println("Recall, Precision");
+			for(PrecisionRecall stepResult : bm25ElevenPointInterpolatedAvgPrecision) {
+				System.out.println(stepResult.recall + ", " + stepResult.precision);
+			}
+			
 		} else
 			System.out
 					.println("ERROR: the path of a XML Feed file has to be passed "

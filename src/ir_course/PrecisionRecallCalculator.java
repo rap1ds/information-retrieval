@@ -9,17 +9,6 @@ import java.util.List;
 
 public class PrecisionRecallCalculator {
 
-	private class PrecisionRecall {
-
-		public double precision;
-		public double recall;
-
-		public PrecisionRecall(double precision, double recall) {
-			this.precision = precision;
-			this.recall = recall;
-		}
-	}
-
 	public List<PrecisionRecall> allResults;
 	public List<PrecisionRecall> steps11Results;
 	public List<PrecisionRecall> interpolatedResults;
@@ -62,7 +51,7 @@ public class PrecisionRecallCalculator {
 	 * Calculates the interpolated precision
 	 */
 	private void interpolate() {
-		interpolatedResults = new ArrayList<PrecisionRecallCalculator.PrecisionRecall>();
+		interpolatedResults = new ArrayList<PrecisionRecall>();
 
 		// Pinterp(r) = max p(r1) r1 >= r
 		for (int r = 0; r < allResults.size(); r++) {
@@ -83,7 +72,7 @@ public class PrecisionRecallCalculator {
 	}
 
 	private void do11pointInterpolatedAverage() {
-		this.steps11Results = new ArrayList<PrecisionRecallCalculator.PrecisionRecall>();
+		this.steps11Results = new ArrayList<PrecisionRecall>();
 
 		double recallStep = 0;
 
