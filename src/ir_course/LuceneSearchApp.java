@@ -151,7 +151,7 @@ public class LuceneSearchApp {
 				bm25PrecisionRecall.calculate11pointInterpolated();
 				
 				vsm11points.add(vsmPrecisionRecall.steps11Results);
-				bm2511points.add(vsmPrecisionRecall.steps11Results);
+				bm2511points.add(bm25PrecisionRecall.steps11Results);
 				
 				// Print results (to file)
 				// Uncomment if you want to write these results to file
